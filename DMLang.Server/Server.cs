@@ -1,4 +1,5 @@
-﻿using LanguageServer;
+﻿using Antlr4.Runtime;
+using LanguageServer;
 using LanguageServer.Client;
 using LanguageServer.Json;
 using LanguageServer.Parameters;
@@ -20,7 +21,16 @@ namespace DMLang.Server
 		/// </summary>
 		/// <param name="input">The input <see cref="Stream"/></param>
 		/// <param name="output">The output <see cref="Stream"/></param>
-		public Server(Stream input, Stream output) : base(input, output) { }
+		public Server(Stream input, Stream output) : base(input, output)
+		{
+			RunParser();
+		}
+
+
+		static void RunParser()
+		{
+			new AntlrInputStream("hello world\n");
+		}
 
 		protected override Result<InitializeResult, ResponseError<InitializeErrorData>> Initialize(InitializeParams parameters)
 		{
