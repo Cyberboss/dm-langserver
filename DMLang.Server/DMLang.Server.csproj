@@ -62,7 +62,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Antlr4 Include="DM.g4">
+    <Antlr4 Include="Parser\DM.g4">
       <Generator>MSBuild:Compile</Generator>
       <CustomToolNamespace>Dangl.Calculator.Generated</CustomToolNamespace>
       <Listener>False</Listener>
