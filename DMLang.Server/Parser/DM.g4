@@ -1,4 +1,4 @@
-﻿//This for a preproccessed DM grammar where includes and defines are inlined. Also all blocks are surrounded with {}
+﻿//This for a preproccessed DM grammar where includes and defines are inlined. Also all blocks are surrounded with {} and comments are removed
 grammar DM;
 
 WS : [ \t\r\n]+ -> skip ;
