@@ -1,0 +1,30 @@
+pull_requests:
+  do_not_increment_build_number: true
+environment:
+  snk_passphrase:
+    secure: dsRGlNewYn/JoycPaMoxLCrb3wkL31RsdU7Xwbo7TIAmClwShCVWeRPN+eGA+fMZX12MDNRBs8Fws4IxqLKQ36thQo6p2B+kPksAUJiAOR5QKJoT6nt8JB1wBMFS2kH4
+  repo_token:
+    secure: vn/p3Xk9q99f6p8y8iVeLAaE4RiG+UVYcKOBowfTC4Kid2tzetzU2PjoePgC/e/M
+skip_branch_with_pr: true
+image: Visual Studio 2017
+configuration: Release
+shallow_clone: true
+cache:
+  - packages -> **\packages.config
+  - C:\ProgramData\chocolatey\bin -> appveyor.yml
+  - C:\ProgramData\chocolatey\lib -> appveyor.yml
+install:
+  - choco install fciv doxygen.portable graphviz.portable codecov
+before_build:
+  - nuget restore dm-langserver.sln
+build:
+  project: dm-langserver.sln
+  verbosity: minimal
+after_build:
+  - ps: Tools/PostCIBuild.ps1
+  - ps: $env:DMLangVersion = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("$env:APPVEYOR_BUILD_FOLDER/DMLang.Server/bin/Release/DMLang.Server.dll").FileVersion
+test_script:
+  - vstest.console /logger:Appveyor "DMLang.Tests\bin\Release\DMLang.Tests.dll" /Enablecodecoverage /Settings:"Tools/CoverageExclusions.runsettings"
+after_test:
+  - ps: Tools/UploadCoverage.ps1
+  - ps: Tools/BuildDox.ps1

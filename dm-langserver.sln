@@ -9,7 +9,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMLang.Tests", "DMLang.Test
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72C13684-0D11-4A0B-884C-695936B8CC32}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
 		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{3070C4C3-9DFE-4373-A063-7A5446B00F91}"
+	ProjectSection(SolutionItems) = preProject
+		Tools\BuildDox.ps1 = Tools\BuildDox.ps1
+		Tools\CoverageExclusions.runsettings = Tools\CoverageExclusions.runsettings
+		Tools\Doxyfile = Tools\Doxyfile
+		Tools\PostCIBuild.ps1 = Tools\PostCIBuild.ps1
+		Tools\tgstation13.org.pfx = Tools\tgstation13.org.pfx
+		Tools\UploadCoverage.ps1 = Tools\UploadCoverage.ps1
 	EndProjectSection
 EndProject
 Global
