@@ -11,7 +11,7 @@ if($publish_dox){
 	echo "Cloning https://git@$github_url..."
 	git clone -b gh-pages --single-branch "https://git@$github_url" "$doxdir" 2>$null
 	rm -r "$doxdir\*"
-	Add-Content "$bf\Tools\Doxyfile" "`nPROJECT_NUMBER = $version`nINPUT = $bf`nOUTPUT_DIRECTORY = $doxdir`nHAVE_DOT=YES"
+	Add-Content "$bf\Tools\Doxyfile" "`nPROJECT_NUMBER = $version`nINPUT = $bf`nOUTPUT_DIRECTORY = $doxdir"
 }else{
 	Add-Content "$bf\Tools\Doxyfile" "`nPROJECT_NUMBER = $version`nINPUT = $bf`nOUTPUT_DIRECTORY = $doxdir"
 }
