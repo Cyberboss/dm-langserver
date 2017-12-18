@@ -40,6 +40,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="MyVisitor.cs" />
+    <Compile Include="Parser\DMDocument.cs" />
+    <Compile Include="Parser\LanguageException.cs" />
+    <Compile Include="Parser\PreprocessorException.cs" />
+    <Compile Include="Parser\PreprocessorRegex.cs" />
+    <Compile Include="Parser\PreprocessorReplacement.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="IServer.cs" />
     <Compile Include="IServerFactory.cs" />
