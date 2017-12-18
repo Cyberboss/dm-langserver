@@ -62,12 +62,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Antlr4 Include="DM.g4">
-      <Generator>MSBuild:Compile</Generator>
-      <CustomToolNamespace>Dangl.Calculator.Generated</CustomToolNamespace>
-      <Listener>False</Listener>
-      <Visitor>True</Visitor>
-    </Antlr4>
+    <None Include="DM.g4" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

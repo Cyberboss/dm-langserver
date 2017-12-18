@@ -20,6 +20,8 @@ using System.Runtime.InteropServices;
 
 // Suppress strong name signing assembly warning
 [assembly: SuppressMessage("Microsoft.Design", "CA2210:AssembliesShouldHaveValidStrongNames")]
+//TODO remove this
+[assembly: SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", Target = "DMLang.Server")]
 
 // Allow tests to use our internal classes
 [assembly: InternalsVisibleTo("DMLang.Tests")]
