@@ -10,7 +10,7 @@ function CodeSign
 if (Test-Path env:snk_passphrase)
 {
 	CodeSign "$bf/DMLang.Tests/bin/Release/DMLang.Tests.dll"
-	CodeSign "$bf/DMLang.Server/bin/Release/TGS.Server.dll"
+	CodeSign "$bf/DMLang.Server/bin/Release/DMLang.Server.dll"
 	$env:snk_passphrase = ""
 }
 
