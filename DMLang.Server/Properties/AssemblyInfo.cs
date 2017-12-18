@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -18,6 +19,9 @@ using System.Runtime.InteropServices;
 
 // Suppress strong name signing assembly warning
 [assembly: SuppressMessage("Microsoft.Design", "CA2210:AssembliesShouldHaveValidStrongNames")]
+
+// Allow tests to use our internal classes
+[assembly: InternalsVisibleTo("DMLang.Tests")]
 
 // Version information for an assembly consists of the following four values:
 //
