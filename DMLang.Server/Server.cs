@@ -29,7 +29,7 @@ namespace DMLang.Server
 
 		static void RunParser()
 		{
-
+			new AntlrInputStream("hello world\n");
 		}
 
 		protected override Result<InitializeResult, ResponseError<InitializeErrorData>> Initialize(InitializeParams parameters)
