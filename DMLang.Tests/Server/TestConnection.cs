@@ -4,7 +4,7 @@ using System.IO;
 namespace DMLang.Server.Tests
 {
 	/// <summary>
-	/// Tests for <see cref="Connection"/>
+	/// Tests for <see cref="Server"/>
 	/// </summary>
 	[TestClass]
 	public sealed class TestConnection
@@ -12,7 +12,7 @@ namespace DMLang.Server.Tests
 		[TestMethod]
 		public void TestInstatiation()
 		{
-			new Connection(new MemoryStream(), new MemoryStream());
+			new Server(new MemoryStream(), new MemoryStream());
 		}
 	}
 }
