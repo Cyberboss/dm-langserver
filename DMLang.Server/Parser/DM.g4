@@ -136,7 +136,7 @@ datum_access: DOT | COLON;
 
 expression : wrapped_expression | NOT wrapped_expression;
 wrapped_expression : inner_expression | LPAREN expression RPAREN;
-inner_expression: operation | value_range | ternery | non_recursive_expression;
+inner_expression: operation | value_range | ternery | non_recursive_inner_expression;
 
 non_recursive_expression: non_recursive_wrapped_expression | NOT non_recursive_wrapped_expression;
 non_recursive_wrapped_expression : non_recursive_inner_expression | LPAREN expression RPAREN;
