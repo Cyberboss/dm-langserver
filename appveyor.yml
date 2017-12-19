@@ -15,8 +15,6 @@ cache:
   - C:\ProgramData\chocolatey\lib -> appveyor.yml
 install:
   - choco install fciv doxygen.portable codecov
-before_build:
-  - nuget restore dm-langserver.sln
 build:
   project: dm-langserver.sln
   verbosity: minimal
