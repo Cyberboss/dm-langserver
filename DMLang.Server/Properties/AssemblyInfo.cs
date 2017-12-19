@@ -24,6 +24,9 @@ using System.Runtime.InteropServices;
 // Allow tests to use our internal classes
 [assembly: InternalsVisibleTo("DMLang.Tests")]
 
+// TODO Remove
+[assembly: SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", Target = "DMLang.Server")]
+
 // Needful
 [assembly: CLSCompliant(true)]
 

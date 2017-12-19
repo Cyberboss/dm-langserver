@@ -40,7 +40,6 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="MyVisitor.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="IServer.cs" />
     <Compile Include="IServerFactory.cs" />

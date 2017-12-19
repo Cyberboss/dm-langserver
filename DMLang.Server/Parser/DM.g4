@@ -1,7 +1,9 @@
-﻿//This for a preproccessed DM grammar where includes and defines are inlined. Also all blocks are surrounded with {} and comments are removed
+﻿//This for a preproccessed DM grammar. Also all blocks are surrounded with {}
 grammar DM;
 
 WS : [ \t\r\n]+ -> skip ;
+BLOCK_COMMENT : '/*' .*? '*/' -> skip;
+EOL_COMMENT : '//' .*? '/n' -> skip;
 DOT: '.';
 ID : [a-zA-Z_][a-zA-Z0-9_\-]* ;             // match lower-case identifiers
 NUMBER: [0-9]+;
@@ -156,7 +158,8 @@ assignment_op: or_equals | and_equals | xor_equals | mult_equals | minus_equals 
 
 embedded_expression : LBRACE expression RBRACE;
 inner_string: string_text | string_text embedded_expression inner_string;
-string_entry: DQUOTE inner_string DQUOTE | DQUOTE DQUOTE;
+inner_string_entry: DQUOTE inner_string DQUOTE | DQUOTE DQUOTE;
+string_entry: LBRACE inner_string_entry RBRACE | inner_string_entry ;
 
 file_ref: SQUOTE SQSTRING SQUOTE;
 number: NUMBER DOT NUMBER | NUMBER | TRUE | FALSE;
