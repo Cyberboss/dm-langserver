@@ -21,7 +21,7 @@ namespace DMLang.Server.Parser
 		/// <summary>
 		/// Construct a <see cref="LanguageException"/>
 		/// </summary>
-		public LanguageException() : base("A language exception occurred") { }
+		public LanguageException() : base("A language exception occurred!") { }
 
 		/// <summary>
 		/// Construct a <see cref="LanguageException"/>
