@@ -126,7 +126,7 @@ Properties</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04273">4273</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04279">4279</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="abad3e0edba03df02f47dc64ca5784c4d"></a>
 <div class="memitem">
@@ -152,8 +152,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04281">4281</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l04282"></a><span class="lineno"> 4282</span>&#160;            : base(parent, invokingState)</div><div class="line"><a name="l04283"></a><span class="lineno"> 4283</span>&#160;        {</div><div class="line"><a name="l04284"></a><span class="lineno"> 4284</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04287">4287</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l04288"></a><span class="lineno"> 4288</span>&#160;            : base(parent, invokingState)</div><div class="line"><a name="l04289"></a><span class="lineno"> 4289</span>&#160;        {</div><div class="line"><a name="l04290"></a><span class="lineno"> 4290</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -171,10 +171,10 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04286">4286</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04292">4292</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
 
 <p>References <a class="el" href="interface_dangl_1_1_calculator_1_1_generated_1_1_i_d_m_visitor.html#aa62d3cf7378c1d55142b81b181754dbb">Dangl.Calculator.Generated.IDMVisitor&lt; Result &gt;.VisitAssignment()</a>.</p>
-<div class="fragment"><div class="line"><a name="l04286"></a><span class="lineno"> 4286</span>&#160;                                                                                    {</div><div class="line"><a name="l04287"></a><span class="lineno"> 4287</span>&#160;            IDMVisitor&lt;TResult&gt; typedVisitor = visitor as IDMVisitor&lt;TResult&gt;;</div><div class="line"><a name="l04288"></a><span class="lineno"> 4288</span>&#160;            <span class="keywordflow">if</span> (typedVisitor != null) <span class="keywordflow">return</span> typedVisitor.VisitAssignment(<span class="keyword">this</span>);</div><div class="line"><a name="l04289"></a><span class="lineno"> 4289</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">return</span> visitor.VisitChildren(<span class="keyword">this</span>);</div><div class="line"><a name="l04290"></a><span class="lineno"> 4290</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l04292"></a><span class="lineno"> 4292</span>&#160;                                                                                    {</div><div class="line"><a name="l04293"></a><span class="lineno"> 4293</span>&#160;            IDMVisitor&lt;TResult&gt; typedVisitor = visitor as IDMVisitor&lt;TResult&gt;;</div><div class="line"><a name="l04294"></a><span class="lineno"> 4294</span>&#160;            <span class="keywordflow">if</span> (typedVisitor != null) <span class="keywordflow">return</span> typedVisitor.VisitAssignment(<span class="keyword">this</span>);</div><div class="line"><a name="l04295"></a><span class="lineno"> 4295</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">return</span> visitor.VisitChildren(<span class="keyword">this</span>);</div><div class="line"><a name="l04296"></a><span class="lineno"> 4296</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a02a7f0cd5d7e5488b493aa143083cbb9"></a>
@@ -190,10 +190,10 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04277">4277</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04283">4283</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
 
-<p>References <a class="el" href="_d_m_parser_8cs_source.html#l00037">Dangl.Calculator.Generated.DMParser.EQUALS</a>.</p>
-<div class="fragment"><div class="line"><a name="l04277"></a><span class="lineno"> 4277</span>&#160;{ <span class="keywordflow">return</span> GetToken(<a class="code" href="class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser.html#a2238e4a533eaa179dff2ec58d5e286c1">DMParser</a>.EQUALS, 0); }</div><div class="ttc" id="class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_html_a2238e4a533eaa179dff2ec58d5e286c1"><div class="ttname"><a href="class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser.html#a2238e4a533eaa179dff2ec58d5e286c1">Dangl.Calculator.Generated.DMParser.DMParser</a></div><div class="ttdeci">DMParser(ITokenStream input)</div><div class="ttdef"><b>Definition:</b> <a href="_d_m_parser_8cs_source.html#l00157">DMParser.cs:157</a></div></div>
+<p>References <a class="el" href="_d_m_parser_8cs_source.html#l00038">Dangl.Calculator.Generated.DMParser.EQUALS</a>.</p>
+<div class="fragment"><div class="line"><a name="l04283"></a><span class="lineno"> 4283</span>&#160;{ <span class="keywordflow">return</span> GetToken(<a class="code" href="class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser.html#a2238e4a533eaa179dff2ec58d5e286c1">DMParser</a>.EQUALS, 0); }</div><div class="ttc" id="class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_html_a2238e4a533eaa179dff2ec58d5e286c1"><div class="ttname"><a href="class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser.html#a2238e4a533eaa179dff2ec58d5e286c1">Dangl.Calculator.Generated.DMParser.DMParser</a></div><div class="ttdeci">DMParser(ITokenStream input)</div><div class="ttdef"><b>Definition:</b> <a href="_d_m_parser_8cs_source.html#l00158">DMParser.cs:158</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -210,8 +210,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04278">4278</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l04278"></a><span class="lineno"> 4278</span>&#160;                                              {</div><div class="line"><a name="l04279"></a><span class="lineno"> 4279</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;ExpressionContext&gt;(0);</div><div class="line"><a name="l04280"></a><span class="lineno"> 4280</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04284">4284</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l04284"></a><span class="lineno"> 4284</span>&#160;                                              {</div><div class="line"><a name="l04285"></a><span class="lineno"> 4285</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;ExpressionContext&gt;(0);</div><div class="line"><a name="l04286"></a><span class="lineno"> 4286</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7a8dc5ad114adb28829d42c0c8df1fee"></a>
@@ -227,8 +227,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04274">4274</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l04274"></a><span class="lineno"> 4274</span>&#160;                                                  {</div><div class="line"><a name="l04275"></a><span class="lineno"> 4275</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;Id_specifierContext&gt;(0);</div><div class="line"><a name="l04276"></a><span class="lineno"> 4276</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04280">4280</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l04280"></a><span class="lineno"> 4280</span>&#160;                                                  {</div><div class="line"><a name="l04281"></a><span class="lineno"> 4281</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;Id_specifierContext&gt;(0);</div><div class="line"><a name="l04282"></a><span class="lineno"> 4282</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -250,7 +250,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04285">4285</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l04291">4291</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
 
 </div>
 </div>

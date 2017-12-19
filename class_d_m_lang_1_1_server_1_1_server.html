@@ -91,7 +91,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="class_d_m_lang_1_1_server_1_1_server-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DMLang.Server.Server Class Reference</div>  </div>
@@ -125,18 +124,11 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac9c5f2d1fde9b0e5f2e7cb1b3d8ee304"><td class="memItemLeft" align="right" valign="top">override Result&lt; InitializeResult, ResponseError&lt; InitializeErrorData &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_m_lang_1_1_server_1_1_server.html#ac9c5f2d1fde9b0e5f2e7cb1b3d8ee304">Initialize</a> (InitializeParams parameters)</td></tr>
 <tr class="separator:ac9c5f2d1fde9b0e5f2e7cb1b3d8ee304"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f9be9eb98ef39109c87fa9a7165468b"><td class="memItemLeft" align="right" valign="top">override Result&lt; ArrayOrObject&lt; Location, Location &gt;, ResponseError &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_m_lang_1_1_server_1_1_server.html#a3f9be9eb98ef39109c87fa9a7165468b">GotoDefinition</a> (TextDocumentPositionParams parameters)</td></tr>
-<tr class="separator:a3f9be9eb98ef39109c87fa9a7165468b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
-Static Private Member Functions</h2></td></tr>
-<tr class="memitem:a52af38b0f0a44060a190d880e40ae5aa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_m_lang_1_1_server_1_1_server.html#a52af38b0f0a44060a190d880e40ae5aa">RunParser</a> ()</td></tr>
-<tr class="separator:a52af38b0f0a44060a190d880e40ae5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class used to implement <a class="el" href="class_service_connection.html">ServiceConnection</a> </p>
 
-<p>Definition at line <a class="el" href="_server_8cs_source.html#l00017">17</a> of file <a class="el" href="_server_8cs_source.html">Server.cs</a>.</p>
+<p>Definition at line <a class="el" href="_server_8cs_source.html#l00011">11</a> of file <a class="el" href="_server_8cs_source.html">Server.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a91cb309df3435a81c5a6574d33464e23"></a>
 <div class="memitem">
@@ -171,38 +163,11 @@ Static Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_server_8cs_source.html#l00024">24</a> of file <a class="el" href="_server_8cs_source.html">Server.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                                   : base(input, output)</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="class_d_m_lang_1_1_server_1_1_server.html#a52af38b0f0a44060a190d880e40ae5aa">RunParser</a>();</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div><div class="ttc" id="class_d_m_lang_1_1_server_1_1_server_html_a52af38b0f0a44060a190d880e40ae5aa"><div class="ttname"><a href="class_d_m_lang_1_1_server_1_1_server.html#a52af38b0f0a44060a190d880e40ae5aa">DMLang.Server.Server.RunParser</a></div><div class="ttdeci">static void RunParser()</div><div class="ttdef"><b>Definition:</b> <a href="_server_8cs_source.html#l00030">Server.cs:30</a></div></div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="_server_8cs_source.html#l00018">18</a> of file <a class="el" href="_server_8cs_source.html">Server.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;: base(input, output) { }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a3f9be9eb98ef39109c87fa9a7165468b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override Result&lt;ArrayOrObject&lt;Location, Location&gt;, ResponseError&gt; DMLang.Server.Server.GotoDefinition </td>
-          <td>(</td>
-          <td class="paramtype">TextDocumentPositionParams&#160;</td>
-          <td class="paramname"><em>parameters</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_server_8cs_source.html#l00049">49</a> of file <a class="el" href="_server_8cs_source.html">Server.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">return</span> base.GotoDefinition(parameters);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div></div><!-- fragment -->
-</div>
-</div>
 <a class="anchor" id="ac9c5f2d1fde9b0e5f2e7cb1b3d8ee304"></a>
 <div class="memitem">
 <div class="memproto">
@@ -225,33 +190,8 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_server_8cs_source.html#l00035">35</a> of file <a class="el" href="_server_8cs_source.html">Server.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            var capabilities = <span class="keyword">new</span> ServerCapabilities</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                textDocumentSync = TextDocumentSyncKind.Full,</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                definitionProvider = <span class="keyword">true</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            };</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            var result = <span class="keyword">new</span> InitializeResult</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                capabilities = capabilities</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            };</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">return</span> Result&lt;InitializeResult, ResponseError&lt;InitializeErrorData&gt;&gt;.Success(result);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div></div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a52af38b0f0a44060a190d880e40ae5aa"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void DMLang.Server.Server.RunParser </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_server_8cs_source.html#l00030">30</a> of file <a class="el" href="_server_8cs_source.html">Server.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_server_8cs_source.html#l00020">20</a> of file <a class="el" href="_server_8cs_source.html">Server.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            var capabilities = <span class="keyword">new</span> ServerCapabilities</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                textDocumentSync = TextDocumentSyncKind.Full,</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            };</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            var result = <span class="keyword">new</span> InitializeResult</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                capabilities = capabilities</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            };</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> Result&lt;InitializeResult, ResponseError&lt;InitializeErrorData&gt;&gt;.Success(result);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

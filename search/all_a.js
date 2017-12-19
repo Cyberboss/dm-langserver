@@ -9,7 +9,5 @@ var searchData=
   ['modenames',['ModeNames',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_lexer.html#ade8bfe87169090bb4f3576f29efc0cf1',1,'Dangl.Calculator.Generated.DMLexer.ModeNames()'],['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_lexer.html#a20a9c091ff3507aa007edade04375e35',1,'Dangl.Calculator.Generated.DMLexer.modeNames()']]],
   ['mult_5fequals',['mult_equals',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_assignment__op_context.html#a1b8e0b2e74484d13022f1a501054d762',1,'Dangl.Calculator.Generated.DMParser.Assignment_opContext.mult_equals()'],['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser.html#aa01df5032f676b9ec52bf7ca33465415',1,'Dangl.Calculator.Generated.DMParser.mult_equals()']]],
   ['mult_5fequalscontext',['Mult_equalsContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_mult__equals_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['mult_5fequalscontext',['Mult_equalsContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_mult__equals_context.html#a5ad0b0289feabddd438709d9cf2633dc',1,'Dangl::Calculator::Generated::DMParser::Mult_equalsContext']]],
-  ['myvisitor',['MyVisitor',['../class_d_m_lang_1_1_server_1_1_my_visitor.html',1,'DMLang::Server']]],
-  ['myvisitor_2ecs',['MyVisitor.cs',['../_my_visitor_8cs.html',1,'']]]
+  ['mult_5fequalscontext',['Mult_equalsContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_mult__equals_context.html#a5ad0b0289feabddd438709d9cf2633dc',1,'Dangl::Calculator::Generated::DMParser::Mult_equalsContext']]]
 ];

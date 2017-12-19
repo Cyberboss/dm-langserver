@@ -128,7 +128,7 @@ Properties</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03853">3853</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03857">3857</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9900bf598355cd523ecf9697bfaf94b9"></a>
 <div class="memitem">
@@ -154,8 +154,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03866">3866</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l03867"></a><span class="lineno"> 3867</span>&#160;            : base(parent, invokingState)</div><div class="line"><a name="l03868"></a><span class="lineno"> 3868</span>&#160;        {</div><div class="line"><a name="l03869"></a><span class="lineno"> 3869</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03870">3870</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l03871"></a><span class="lineno"> 3871</span>&#160;            : base(parent, invokingState)</div><div class="line"><a name="l03872"></a><span class="lineno"> 3872</span>&#160;        {</div><div class="line"><a name="l03873"></a><span class="lineno"> 3873</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -173,10 +173,10 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03871">3871</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03875">3875</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
 
 <p>References <a class="el" href="interface_dangl_1_1_calculator_1_1_generated_1_1_i_d_m_visitor.html#a1aef5d257aad73b596c262c2bf42d774">Dangl.Calculator.Generated.IDMVisitor&lt; Result &gt;.VisitOperation()</a>.</p>
-<div class="fragment"><div class="line"><a name="l03871"></a><span class="lineno"> 3871</span>&#160;                                                                                    {</div><div class="line"><a name="l03872"></a><span class="lineno"> 3872</span>&#160;            IDMVisitor&lt;TResult&gt; typedVisitor = visitor as IDMVisitor&lt;TResult&gt;;</div><div class="line"><a name="l03873"></a><span class="lineno"> 3873</span>&#160;            <span class="keywordflow">if</span> (typedVisitor != null) <span class="keywordflow">return</span> typedVisitor.VisitOperation(<span class="keyword">this</span>);</div><div class="line"><a name="l03874"></a><span class="lineno"> 3874</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">return</span> visitor.VisitChildren(<span class="keyword">this</span>);</div><div class="line"><a name="l03875"></a><span class="lineno"> 3875</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l03875"></a><span class="lineno"> 3875</span>&#160;                                                                                    {</div><div class="line"><a name="l03876"></a><span class="lineno"> 3876</span>&#160;            IDMVisitor&lt;TResult&gt; typedVisitor = visitor as IDMVisitor&lt;TResult&gt;;</div><div class="line"><a name="l03877"></a><span class="lineno"> 3877</span>&#160;            <span class="keywordflow">if</span> (typedVisitor != null) <span class="keywordflow">return</span> typedVisitor.VisitOperation(<span class="keyword">this</span>);</div><div class="line"><a name="l03878"></a><span class="lineno"> 3878</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">return</span> visitor.VisitChildren(<span class="keyword">this</span>);</div><div class="line"><a name="l03879"></a><span class="lineno"> 3879</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6aca9c79e69a8e25f77f51ef9ce2d3d3"></a>
@@ -192,8 +192,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03860">3860</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l03860"></a><span class="lineno"> 3860</span>&#160;                                              {</div><div class="line"><a name="l03861"></a><span class="lineno"> 3861</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;ExpressionContext&gt;(0);</div><div class="line"><a name="l03862"></a><span class="lineno"> 3862</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03864">3864</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l03864"></a><span class="lineno"> 3864</span>&#160;                                              {</div><div class="line"><a name="l03865"></a><span class="lineno"> 3865</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;ExpressionContext&gt;(0);</div><div class="line"><a name="l03866"></a><span class="lineno"> 3866</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6401f369a35442f65410bf8ffe926db4"></a>
@@ -209,8 +209,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03857">3857</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l03857"></a><span class="lineno"> 3857</span>&#160;                                        {</div><div class="line"><a name="l03858"></a><span class="lineno"> 3858</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;Lhrh_opContext&gt;(0);</div><div class="line"><a name="l03859"></a><span class="lineno"> 3859</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03861">3861</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l03861"></a><span class="lineno"> 3861</span>&#160;                                        {</div><div class="line"><a name="l03862"></a><span class="lineno"> 3862</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;Lhrh_opContext&gt;(0);</div><div class="line"><a name="l03863"></a><span class="lineno"> 3863</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9bcb83b2c12eebef480e2164ce95b59f"></a>
@@ -226,8 +226,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03854">3854</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l03854"></a><span class="lineno"> 3854</span>&#160;                                                                          {</div><div class="line"><a name="l03855"></a><span class="lineno"> 3855</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;Non_recursive_expressionContext&gt;(0);</div><div class="line"><a name="l03856"></a><span class="lineno"> 3856</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03858">3858</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l03858"></a><span class="lineno"> 3858</span>&#160;                                                                          {</div><div class="line"><a name="l03859"></a><span class="lineno"> 3859</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;Non_recursive_expressionContext&gt;(0);</div><div class="line"><a name="l03860"></a><span class="lineno"> 3860</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aed612a6a5967fae0d035f5ffb9692413"></a>
@@ -243,8 +243,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03863">3863</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l03863"></a><span class="lineno"> 3863</span>&#160;                                    {</div><div class="line"><a name="l03864"></a><span class="lineno"> 3864</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;ValueContext&gt;(0);</div><div class="line"><a name="l03865"></a><span class="lineno"> 3865</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03867">3867</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l03867"></a><span class="lineno"> 3867</span>&#160;                                    {</div><div class="line"><a name="l03868"></a><span class="lineno"> 3868</span>&#160;            <span class="keywordflow">return</span> GetRuleContext&lt;ValueContext&gt;(0);</div><div class="line"><a name="l03869"></a><span class="lineno"> 3869</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -266,7 +266,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03870">3870</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
+<p>Definition at line <a class="el" href="_d_m_parser_8cs_source.html#l03874">3874</a> of file <a class="el" href="_d_m_parser_8cs_source.html">DMParser.cs</a>.</p>
 
 </div>
 </div>
