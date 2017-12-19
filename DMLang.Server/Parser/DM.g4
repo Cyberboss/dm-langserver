@@ -1,7 +1,9 @@
-﻿//This for a preproccessed DM grammar where includes and defines are inlined. Also all blocks are surrounded with {} and comments are removed
+﻿//This for a preproccessed DM grammar. Also all blocks are surrounded with {}
 grammar DM;
 
 WS : [ \t\r\n]+ -> skip ;
+BLOCK_COMMENT : '/*' .*? '*/' -> skip;
+EOL_COMMENT : '//' .*? '/n' -> skip;
 DOT: '.';
 ID : [a-zA-Z_][a-zA-Z0-9_\-]* ;             // match lower-case identifiers
 NUMBER: [0-9]+;
