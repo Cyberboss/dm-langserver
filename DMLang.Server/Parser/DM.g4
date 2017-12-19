@@ -5,7 +5,7 @@ WS : [ \t\r\n]+ -> skip ;
 BLOCK_COMMENT : '/*' .*? '*/' -> skip;
 EOL_COMMENT : '//' .*? '/n' -> skip;
 DOT: '.';
-ID : [a-zA-Z_][a-zA-Z0-9_\-]* ;             // match lower-case identifiers
+ID : [a-zA-Z_][a-zA-Z0-9_\-]* ;
 NUMBER: [0-9]+;
 TRUE: 'TRUE';
 FALSE: 'FALSE';

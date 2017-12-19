@@ -2,6 +2,8 @@
 using LanguageServer.Parameters;
 using LanguageServer.Parameters.General;
 using System.IO;
+using LanguageServer.Parameters.Workspace;
+using LanguageServer.Parameters.TextDocument;
 
 namespace DMLang.Server
 {
@@ -21,13 +23,28 @@ namespace DMLang.Server
 		{
 			var capabilities = new ServerCapabilities
 			{
-				textDocumentSync = TextDocumentSyncKind.Full,
+				textDocumentSync = TextDocumentSyncKind.Incremental,
 			};
 			var result = new InitializeResult
 			{
 				capabilities = capabilities
 			};
 			return Result<InitializeResult, ResponseError<InitializeErrorData>>.Success(result);
+		}
+
+		protected override void DidChangeWatchedFiles(DidChangeWatchedFilesParams @params)
+		{
+			base.DidChangeWatchedFiles(@params);
+		}
+
+		protected override void DidChangeTextDocument(DidChangeTextDocumentParams @params)
+		{
+			base.DidChangeTextDocument(@params);
+		}
+
+		protected override void DidOpenTextDocument(DidOpenTextDocumentParams @params)
+		{
+			base.DidOpenTextDocument(@params);
 		}
 	}
 }

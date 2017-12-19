@@ -43,8 +43,6 @@
     <Compile Include="Parser\DMDocument.cs" />
     <Compile Include="Parser\LanguageException.cs" />
     <Compile Include="Parser\PreprocessorException.cs" />
-    <Compile Include="Parser\PreprocessorRegex.cs" />
-    <Compile Include="Parser\PreprocessorReplacement.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="IServer.cs" />
     <Compile Include="IServerFactory.cs" />
@@ -52,25 +50,19 @@
     <Compile Include="ServerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Antlr4.Runtime, Version=4.6.0.0, Culture=neutral, PublicKeyToken=09abb75b9ed49849, processorArchitecture=MSIL">
-      <HintPath>..\packages\Antlr4.Runtime.4.6.4\lib\net45\Antlr4.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="LanguageServer, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LanguageServerProtocol.2.0.2\lib\netstandard1.3\LanguageServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Matarillo.IO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Matarillo.IO.1.0.0\lib\netstandard1.1\Matarillo.IO.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Antlr4 Include="Parser\DM.g4">
       <Generator>MSBuild:Compile</Generator>
-      <CustomToolNamespace>Dangl.Calculator.Generated</CustomToolNamespace>
-      <Listener>False</Listener>
+      <CustomToolNamespace>DMLang.Parser.DM</CustomToolNamespace>
+      <Listener>True</Listener>
+      <Visitor>True</Visitor>
+    </Antlr4>
+    <Antlr4 Include="Parser\Preprocessor.g4">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>DMLang.Parser.Preprocessor</CustomToolNamespace>
+      <Listener>True</Listener>
       <Visitor>True</Visitor>
     </Antlr4>
     <None Include="packages.config" />

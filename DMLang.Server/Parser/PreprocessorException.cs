@@ -32,6 +32,6 @@ namespace DMLang.Server.Parser
 		/// </summary>
 		/// <param name="info">The <see cref="SerializationInfo"/> to build the <see cref="PreprocessorException"/> from</param>
 		/// <param name="context">The <see cref="StreamingContext"/> for building the <see cref="PreprocessorException"/></param>
-		PreprocessorException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+		private PreprocessorException(SerializationInfo info, StreamingContext context) : base(info, context) { }
 	}
 }
