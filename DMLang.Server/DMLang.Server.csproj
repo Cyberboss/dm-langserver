@@ -61,13 +61,13 @@
       <Generator>MSBuild:Compile</Generator>
       <CustomToolNamespace>DMLang.Parser.DM</CustomToolNamespace>
       <Listener>True</Listener>
-      <Visitor>True</Visitor>
+      <Visitor>False</Visitor>
     </Antlr4>
     <Antlr4 Include="Parser\Preprocessor.g4">
       <Generator>MSBuild:Compile</Generator>
       <CustomToolNamespace>DMLang.Parser.Preprocessor</CustomToolNamespace>
       <Listener>True</Listener>
-      <Visitor>True</Visitor>
+      <Visitor>False</Visitor>
     </Antlr4>
   </ItemGroup>
   <ItemGroup>

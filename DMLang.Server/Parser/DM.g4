@@ -61,7 +61,11 @@ DQSTRING : ('\\\\' | '\\"' | ~[\r\n"])+ ;
 SQSTRING : ('\\\\' | '\\\'' | ~[\r\n\'])+ ;
 
 language : definition | definition language ;
-definition : root_var_def | datum_def | proc_def;
+definition : doc_comment definition_type | definition_type;
+
+doc_comment: BLOCK_COMMENT doc_comment | EOL_COMMENT doc_comment | BLOCK_COMMENT | EOL_COMMENT;
+
+definition_type: root_var_def | datum_def | proc_def;
 
 optional_slash : SLASH | ;
 
