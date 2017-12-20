@@ -42,7 +42,32 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AST\AssignmentOperation.cs" />
+    <Compile Include="AST\IArgument.cs" />
+    <Compile Include="AST\IAssignment.cs" />
+    <Compile Include="AST\IAST.cs" />
+    <Compile Include="AST\IBlock.cs" />
+    <Compile Include="AST\IBranch.cs" />
+    <Compile Include="AST\IConstantString.cs" />
+    <Compile Include="AST\IConstantValue.cs" />
+    <Compile Include="AST\IDatum.cs" />
+    <Compile Include="AST\IExceptionHandler.cs" />
+    <Compile Include="AST\IExpression.cs" />
+    <Compile Include="AST\INumber.cs" />
+    <Compile Include="AST\NumericOperation.cs" />
+    <Compile Include="AST\IOperationExpression.cs" />
+    <Compile Include="AST\IProc.cs" />
+    <Compile Include="AST\IProcCall.cs" />
+    <Compile Include="AST\IReturnStatement.cs" />
+    <Compile Include="AST\IStatement.cs" />
+    <Compile Include="AST\IString.cs" />
+    <Compile Include="AST\ITypePath.cs" />
+    <Compile Include="AST\IUnsafeVar.cs" />
+    <Compile Include="AST\IValue.cs" />
+    <Compile Include="AST\IVar.cs" />
+    <Compile Include="AST\RootType.cs" />
     <Compile Include="ExitCode.cs" />
+    <Compile Include="ISourceLocation.cs" />
     <Compile Include="Parser\DMDocument.cs" />
     <Compile Include="Parser\LanguageException.cs" />
     <Compile Include="Parser\PreprocessorException.cs" />

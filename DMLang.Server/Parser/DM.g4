@@ -1,10 +1,8 @@
 ﻿//This for a preproccessed DM grammar. Also all blocks are surrounded with {}
 grammar DM;
 
-WS : [ \t\r\n]+ -> skip ;
-BLOCK_COMMENT : '/*' .*? '*/' -> skip;
-EOL_COMMENT : '//' .*? '/n' -> skip;
-DOT: '.';
+DDOT: '\.\.';
+DOT: '\.';
 ID : [a-zA-Z_][a-zA-Z0-9_\-]* ;
 NUMBER: [0-9]+;
 TRUE: 'TRUE';
@@ -40,6 +38,7 @@ SWITCH: 'switch';
 IF: 'if';
 FOR: 'for';
 WHILE: 'while';
+THROW: 'throw';
 AND: '&';
 OR: '|';
 LTHAN: '<';
@@ -56,14 +55,15 @@ SPAWN: 'spawn';
 WORLD: 'world';
 STEP: 'step';
 TO: 'to';
+CATCH: 'catch';
 QUESTION: '?';
 DQSTRING : ('\\\\' | '\\"' | ~[\r\n"])+ ;
 SQSTRING : ('\\\\' | '\\\'' | ~[\r\n\'])+ ;
 
-language : definition | definition language ;
-definition : doc_comment definition_type | definition_type;
+WS : [ \t\r\n]+ -> skip ;
 
-doc_comment: BLOCK_COMMENT doc_comment | EOL_COMMENT doc_comment | BLOCK_COMMENT | EOL_COMMENT;
+language : definition | definition language ;
+definition : definition_type | definition_type;
 
 definition_type: root_var_def | datum_def | proc_def;
 
@@ -100,9 +100,12 @@ argument_decl: VAR full_typepath | typepath | ID;
 
 block: LBRACE statements RBRACE | LBRACE RBRACE | statement;
 statements: statement statements | statement;
-statement: control_flow | var_def | assignment_statement | proccall_statement;
+statement: control_flow | var_def | assignment_statement | proccall_statement | return_statement | throw_statement;
 proccall_statement: proccall SEMI;
 assignment_statement: id_specifier assignment_op expression SEMI;
+
+throw_statement: THROW expression;
+return_statement: RETURN expression | RETURN;
 
 control_flow: if_statement | switch_statement | while_statement | for_statement | spawn_statement;
 
@@ -128,8 +131,9 @@ for_standard: for_optional_argument_def SEMI optional_expression SEMI optional_e
 for_optional_argument_def: argument_def | ;
 optional_expression: expression | ;
 
-proccall: id_specifier datum_access proc_invocation | proc_invocation;
-proc_invocation: ID LPAREN arguments RPAREN | ID LPAREN RPAREN;
+proccall: DDOT proc_arguments | id_specifier datum_access proc_invocation | proc_invocation ;
+proc_invocation: ID proc_arguments;
+proc_arguments: LPAREN arguments RPAREN | ID LPAREN RPAREN;
 unquotable_associated_argument: ID EQUALS expression | expression;
 arguments: unquotable_associated_argument | unquotable_associated_argument COMMA arguments;
 
@@ -137,17 +141,19 @@ associated_argument: string_entry EQUALS expression | unquotable_associated_argu
 associated_arguments: associated_argument | associated_argument COMMA associated_arguments;
 list_declaration : LIST LPAREN associated_arguments RPAREN;
 
-id_specifier: ID datum_access id_specifier | ID | WORLD | GLOBAL;
+id_specifier: DOT | inner_id_specifier;
+inner_id_specifier: ID datum_access inner_id_specifier | ID | WORLD | GLOBAL;
 datum_access: DOT | COLON;
 
 expression : wrapped_expression | NOT wrapped_expression;
 wrapped_expression : inner_expression | LPAREN expression RPAREN;
-inner_expression: operation | value_range | ternery | non_recursive_inner_expression;
+inner_expression: operation | value_range | ternery | list_access | non_recursive_inner_expression;
 
 non_recursive_expression: non_recursive_wrapped_expression | NOT non_recursive_wrapped_expression;
 non_recursive_wrapped_expression : non_recursive_inner_expression | LPAREN expression RPAREN;
 non_recursive_inner_expression: assignment | list_declaration | value;
 
+list_access: non_recursive_expression LBRACE expression RBRACE;
 operation: non_recursive_expression lhrh_op expression | value lhrh_op expression;
 value_range: non_recursive_expression TO expression STEP expression | non_recursive_expression TO expression;
 ternery: non_recursive_expression QUESTION expression COLON expression;
