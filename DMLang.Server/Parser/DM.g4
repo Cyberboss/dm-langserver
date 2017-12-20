@@ -57,8 +57,8 @@ WORLD: 'world';
 STEP: 'step';
 TO: 'to';
 QUESTION: '?';
-DQSTRING : ~('\r' | '\n' | '"')+ ;
-SQSTRING : ~('\r' | '\n' | '\'')+ ;
+DQSTRING : ('\\\\' | '\\"' | ~[\r\n"])+ ;
+SQSTRING : ('\\\\' | '\\\'' | ~[\r\n\'])+ ;
 
 language : definition | definition language ;
 definition : root_var_def | datum_def | proc_def;
