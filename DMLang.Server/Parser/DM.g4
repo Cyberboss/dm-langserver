@@ -152,7 +152,7 @@ operation: non_recursive_expression lhrh_op expression | value lhrh_op expressio
 value_range: non_recursive_expression TO expression STEP expression | non_recursive_expression TO expression;
 ternery: non_recursive_expression QUESTION expression COLON expression;
 
-lhrh_op: equals | not_equals | and | or | AND | OR | XOR | STAR | PLUS | MINUS | SLASH;
+lhrh_op: equals | not_equals | and | or | pow | AND | OR | XOR | STAR | PLUS | MINUS | SLASH | EQUALS;
 
 value: constexpr | proccall;
 constexpr: number | string_entry;
@@ -172,6 +172,7 @@ equals: EQUALS EQUALS;
 not_equals: NOT EQUALS;
 and: AND AND;
 or: OR OR;
+pow: STAR STAR;
 
 or_equals: OR EQUALS;
 and_equals: AND EQUALS;

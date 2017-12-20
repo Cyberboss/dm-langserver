@@ -59,13 +59,13 @@
   <ItemGroup>
     <Antlr4 Include="Parser\DM.g4">
       <Generator>MSBuild:Compile</Generator>
-      <CustomToolNamespace>DMLang.Parser.DM</CustomToolNamespace>
+      <CustomToolNamespace>DMLang.Server.Parser</CustomToolNamespace>
       <Listener>True</Listener>
       <Visitor>False</Visitor>
     </Antlr4>
     <Antlr4 Include="Parser\Preprocessor.g4">
       <Generator>MSBuild:Compile</Generator>
-      <CustomToolNamespace>DMLang.Parser.Preprocessor</CustomToolNamespace>
+      <CustomToolNamespace>DMLang.Server.Parser</CustomToolNamespace>
       <Listener>True</Listener>
       <Visitor>False</Visitor>
     </Antlr4>
