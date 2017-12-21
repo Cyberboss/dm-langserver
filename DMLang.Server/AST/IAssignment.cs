@@ -11,7 +11,7 @@
 		IUnsafeVar LeftHand { get; }
 
 		/// <summary>
-		/// The <see cref="AST.AssignmentOperation"/> occurring during the <see cref="IAssignment"/>
+		/// The <see cref="DMLang.Server.AST.AssignmentOperation"/> occurring during the <see cref="IAssignment"/>
 		/// </summary>
 		AssignmentOperation AssignmentOperation { get; }
 

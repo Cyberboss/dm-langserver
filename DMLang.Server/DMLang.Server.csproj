@@ -44,10 +44,12 @@
   <ItemGroup>
     <Compile Include="AST\AssignmentOperation.cs" />
     <Compile Include="AST\AST.cs" />
+    <Compile Include="AST\IAdjustOperation.cs" />
     <Compile Include="AST\IFor.cs" />
     <Compile Include="AST\IGoto.cs" />
     <Compile Include="AST\ILabel.cs" />
     <Compile Include="AST\IRange.cs" />
+    <Compile Include="AST\ITypePath.cs" />
     <Compile Include="AST\IWhile.cs" />
     <Compile Include="AST\IArgument.cs" />
     <Compile Include="AST\IAssignment.cs" />
@@ -68,11 +70,12 @@
     <Compile Include="AST\IReturnStatement.cs" />
     <Compile Include="AST\IStatement.cs" />
     <Compile Include="AST\IString.cs" />
-    <Compile Include="AST\ITypePath.cs" />
+    <Compile Include="AST\ITypeSpecifier.cs" />
     <Compile Include="AST\IUnsafeVar.cs" />
     <Compile Include="AST\IValue.cs" />
     <Compile Include="AST\IVar.cs" />
     <Compile Include="AST\ISwitch.cs" />
+    <Compile Include="AST\PathType.cs" />
     <Compile Include="AST\RootType.cs" />
     <Compile Include="AST\UnsafeVar.cs" />
     <Compile Include="AST\Var.cs" />

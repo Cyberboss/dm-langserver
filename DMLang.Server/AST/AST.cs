@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace DMLang.Server.AST
 {
@@ -60,7 +61,7 @@ namespace DMLang.Server.AST
 		public void AddByondBuiltins()
 		{
 			if (addedBuiltins)
-				throw new InvalidOperationException("Can only AddByondBuiltins once!");
+				throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture, "Can only {0} once!", nameof(AddByondBuiltins)));
 
 
 			addedBuiltins = true;
@@ -69,7 +70,7 @@ namespace DMLang.Server.AST
 		public void AddStdDef()
 		{
 			if (addedStdDef)
-				throw new InvalidOperationException("Can only AddByondBuiltins once!");
+				throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture, "Can only {0} once!", nameof(AddStdDef)));
 
 
 			addedStdDef = true;

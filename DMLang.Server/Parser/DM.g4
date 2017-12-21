@@ -115,8 +115,8 @@ label_statement: ID COLON;
 goto_statement: GOTO ID;
 
 inline_adjust: left_inline_adjust | right_inline_adjust;
-left_inline_adjust: expression inline_adjuster;
-right_inline_adjust: inline_adjuster expression;
+left_inline_adjust: id_specifier inline_adjuster;
+right_inline_adjust: inline_adjuster id_specifier;
 inline_adjuster: PLUS PLUS | MINUS MINUS;
 
 throw_statement: THROW expression;
@@ -164,11 +164,11 @@ datum_access: DOT | COLON;
 
 expression : wrapped_expression | NOT wrapped_expression;
 wrapped_expression : inner_expression | LPAREN expression RPAREN;
-inner_expression: operation | value_range | ternery | list_access | left_inline_adjust | non_recursive_inner_expression;
+inner_expression: operation | value_range | ternery | list_access | inline_adjust | non_recursive_inner_expression;
 
 non_recursive_expression: non_recursive_wrapped_expression | NOT non_recursive_wrapped_expression;
 non_recursive_wrapped_expression : non_recursive_inner_expression | LPAREN expression RPAREN;
-non_recursive_inner_expression: assignment | list_declaration | value | new_statement | right_inline_adjust;
+non_recursive_inner_expression: assignment | list_declaration | value | new_statement | inline_adjust;
 
 list_access: non_recursive_expression LBRACE expression RBRACE;
 operation: non_recursive_expression lhrh_op expression | value lhrh_op expression;
