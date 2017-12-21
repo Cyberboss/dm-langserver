@@ -9,5 +9,6 @@ namespace DMLang.Server.AST
 	interface IFor : IWhile
 	{
 		IStatement Initializer { get; }
+		IExpression Advancer { get; }
 	}
 }
