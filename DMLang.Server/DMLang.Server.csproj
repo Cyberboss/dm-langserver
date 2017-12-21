@@ -1,19 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Antlr4.CodeGenerator.4.6.4\build\Antlr4.CodeGenerator.props" Condition="Exists('..\packages\Antlr4.CodeGenerator.4.6.4\build\Antlr4.CodeGenerator.props')" />
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{70424B9A-8426-4902-8FFA-2F0610958207}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DMLang.Server</RootNamespace>
     <AssemblyName>DMLang.Server</AssemblyName>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,6 +23,7 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <DocumentationFile>bin\Debug\DMLang.Server.xml</DocumentationFile>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,8 +36,50 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\Release\DMLang.Server.xml</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AST\AssignmentOperation.cs" />
+    <Compile Include="AST\IFor.cs" />
+    <Compile Include="AST\IGoto.cs" />
+    <Compile Include="AST\ILabel.cs" />
+    <Compile Include="AST\IRange.cs" />
+    <Compile Include="AST\IWhile.cs" />
+    <Compile Include="AST\IArgument.cs" />
+    <Compile Include="AST\IAssignment.cs" />
+    <Compile Include="AST\IAST.cs" />
+    <Compile Include="AST\IBlock.cs" />
+    <Compile Include="AST\IBranch.cs" />
+    <Compile Include="AST\IConstantString.cs" />
+    <Compile Include="AST\IConstantValue.cs" />
+    <Compile Include="AST\IDatum.cs" />
+    <Compile Include="AST\IExceptionHandler.cs" />
+    <Compile Include="AST\IExpression.cs" />
+    <Compile Include="AST\INumber.cs" />
+    <Compile Include="AST\IPathable.cs" />
+    <Compile Include="AST\NumericOperation.cs" />
+    <Compile Include="AST\IOperationExpression.cs" />
+    <Compile Include="AST\IProc.cs" />
+    <Compile Include="AST\IProcCall.cs" />
+    <Compile Include="AST\IReturnStatement.cs" />
+    <Compile Include="AST\IStatement.cs" />
+    <Compile Include="AST\IString.cs" />
+    <Compile Include="AST\ITypePath.cs" />
+    <Compile Include="AST\IUnsafeVar.cs" />
+    <Compile Include="AST\IValue.cs" />
+    <Compile Include="AST\IVar.cs" />
+    <Compile Include="AST\ISwitch.cs" />
+    <Compile Include="AST\RootType.cs" />
+    <Compile Include="AST\VarQualifier.cs" />
+    <Compile Include="ExitCode.cs" />
+    <Compile Include="ISourceLocation.cs" />
+    <Compile Include="Parser\DMDocument.cs" />
+    <Compile Include="Parser\LanguageException.cs" />
+    <Compile Include="Parser\PreprocessorException.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="IServer.cs" />
     <Compile Include="IServerFactory.cs" />
@@ -47,36 +87,32 @@
     <Compile Include="ServerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Antlr4.Runtime, Version=4.6.0.0, Culture=neutral, PublicKeyToken=09abb75b9ed49849, processorArchitecture=MSIL">
-      <HintPath>..\packages\Antlr4.Runtime.4.6.4\lib\net45\Antlr4.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="LanguageServer, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LanguageServerProtocol.2.0.2\lib\netstandard1.3\LanguageServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Matarillo.IO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Matarillo.IO.1.0.0\lib\netstandard1.1\Matarillo.IO.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Antlr4 Include="Parser\DM.g4">
       <Generator>MSBuild:Compile</Generator>
-      <CustomToolNamespace>Dangl.Calculator.Generated</CustomToolNamespace>
-      <Listener>False</Listener>
-      <Visitor>True</Visitor>
+      <CustomToolNamespace>DMLang.Server.Parser</CustomToolNamespace>
+      <Listener>True</Listener>
+      <Visitor>False</Visitor>
     </Antlr4>
-    <None Include="packages.config" />
+    <Antlr4 Include="Parser\Preprocessor.g4">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>DMLang.Server.Parser</CustomToolNamespace>
+      <Listener>True</Listener>
+      <Visitor>False</Visitor>
+    </Antlr4>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Antlr4">
+      <Version>4.6.4</Version>
+    </PackageReference>
+    <PackageReference Include="LanguageServerProtocol">
+      <Version>2.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="NETStandard.Library">
+      <Version>1.6.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Antlr4.CodeGenerator.4.6.4\build\Antlr4.CodeGenerator.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Antlr4.CodeGenerator.4.6.4\build\Antlr4.CodeGenerator.props'))" />
-    <Error Condition="!Exists('..\packages\Antlr4.CodeGenerator.4.6.4\build\Antlr4.CodeGenerator.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Antlr4.CodeGenerator.4.6.4\build\Antlr4.CodeGenerator.targets'))" />
-  </Target>
-  <Import Project="..\packages\Antlr4.CodeGenerator.4.6.4\build\Antlr4.CodeGenerator.targets" Condition="Exists('..\packages\Antlr4.CodeGenerator.4.6.4\build\Antlr4.CodeGenerator.targets')" />
 </Project>

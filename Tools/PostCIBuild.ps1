@@ -10,8 +10,8 @@ function CodeSign
 if (Test-Path env:snk_passphrase)
 {
 	CodeSign "$bf/DMLang.Tests/bin/Release/DMLang.Tests.dll"
-	CodeSign "$bf/DMLang.Server/bin/Release/DMLang.Server.dll"
+	CodeSign "$bf/DMLang.Server/bin/Release/DMLang.Server.exe"
 	$env:snk_passphrase = ""
 }
 
-$version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("$bf/DMLang.Server/bin/Release/DMLang.Server.dll").FileVersion
+$version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("$bf/DMLang.Server/bin/Release/DMLang.Server.exe").FileVersion

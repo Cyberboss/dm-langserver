@@ -5,12 +5,12 @@ namespace DMLang.Server
 	/// <summary>
 	/// DM Langserver
 	/// </summary>
-	public interface IServer
+	interface IServer
 	{
 		/// <summary>
-		/// Start listening on the server
+		/// Start the langserver
 		/// </summary>
-		/// <returns>A <see cref="Task"/> representing the operation</returns>
-		Task Listen();
+		/// <returns>A <see cref="Task"/> resulting in the <see cref="ExitCode"/> of the <see cref="IServer"/></returns>
+		Task<ExitCode> Run();
 	}
 }

@@ -16,13 +16,13 @@ cache:
 install:
   - choco install fciv doxygen.portable codecov
 before_build:
-  - nuget restore dm-langserver.sln
+  - nuget restore
 build:
   project: dm-langserver.sln
   verbosity: minimal
 after_build:
   - ps: Tools/PostCIBuild.ps1
-  - ps: $env:DMLangVersion = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("$env:APPVEYOR_BUILD_FOLDER/DMLang.Server/bin/Release/DMLang.Server.dll").FileVersion
+  - ps: $env:DMLangVersion = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("$env:APPVEYOR_BUILD_FOLDER/DMLang.Server/bin/Release/DMLang.Server.exe").FileVersion
 test_script:
   - vstest.console /logger:Appveyor "DMLang.Tests\bin\Release\DMLang.Tests.dll" /Enablecodecoverage /Settings:"Tools/CoverageExclusions.runsettings"
 after_test:
