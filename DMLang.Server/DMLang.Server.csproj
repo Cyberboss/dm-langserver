@@ -43,6 +43,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AST\AssignmentOperation.cs" />
+    <Compile Include="AST\AST.cs" />
     <Compile Include="AST\IFor.cs" />
     <Compile Include="AST\IGoto.cs" />
     <Compile Include="AST\ILabel.cs" />
