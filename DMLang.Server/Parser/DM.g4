@@ -1,8 +1,8 @@
 ﻿//This for a preproccessed DM grammar. Also all blocks are surrounded with {}
 grammar DM;
 
-DDOT: '\.\.';
-DOT: '\.';
+DDOT: '..';
+DOT: '.';
 ID : [a-zA-Z_][a-zA-Z0-9_\-]* ;
 NUMBER: [0-9]+;
 TRUE: 'TRUE';
