@@ -76,7 +76,7 @@ optional_slash : SLASH | ;
 string_text: BSLASH LBRACE string_text | embedded_expression string_text | . string_text | ~BSLASH DQUOTE;
 
 root_var_def: optional_slash var_def;
-var_def : VAR id_typepath_decl | VAR optional_slash LCURL id_typepath_decl_block RCURL ;
+var_def : VAR id_typepath_decl list_access | VAR id_typepath_decl | VAR optional_slash LCURL id_typepath_decl_block RCURL ;
 id_typepath_decl_block : id_typepath_decl id_typepath_decl_block| id_typepath_decl;
 id_typepath_decl : id_typepath | static_or_global SLASH id_typepath | var_qualifier optional_slash LCURL id_typepath_block RCURL;
 var_qualifier: static_or_global | CONST;
