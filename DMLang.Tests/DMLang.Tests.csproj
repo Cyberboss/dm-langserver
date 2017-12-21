@@ -93,6 +93,8 @@
     <None Include="Documents\Preprocessor\Basic.dm" />
     <None Include="Documents\Preprocessor\Basic2.dm" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Server\AST\TestAST.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
