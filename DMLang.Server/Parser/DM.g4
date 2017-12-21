@@ -1,6 +1,8 @@
 ﻿//This for a preproccessed DM grammar. Also all blocks are surrounded with {}
 grammar DM;
 
+SDOT: '......';
+FDOT: '.....';
 DDOT: '..';
 DOT: '.';
 ID : [a-zA-Z_][a-zA-Z0-9_\-]* ;
@@ -166,8 +168,9 @@ ternery: non_recursive_expression QUESTION expression COLON expression;
 
 lhrh_op: equals | not_equals | and | or | pow | AND | OR | XOR | STAR | PLUS | MINUS | SLASH | EQUALS;
 
-value: constexpr | proccall;
+value: constexpr | proccall | proctype;
 constexpr: number | string_entry;
+proctype: SDOT | FDOT;
 
 assignment: id_specifier EQUALS expression;
 assignment_op: or_equals | and_equals | xor_equals | mult_equals | minus_equals | plus_equals | slash_equals | EQUALS;
