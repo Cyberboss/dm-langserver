@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DMLang.Server.AST
 {
+	/// <summary>
+	/// Operation to perform during an <see cref="IAssignment"/>
+	/// </summary>
 	enum AssignmentOperation
 	{
 		None,
@@ -15,6 +18,7 @@ namespace DMLang.Server.AST
 		Division,
 		Or,
 		And,
-		Xor
+		Xor,
+		Modulo
 	}
 }

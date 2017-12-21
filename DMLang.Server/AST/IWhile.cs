@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace DMLang.Server.AST
 {
-	interface ITypePath : IValue
+	interface IWhile : IStatement
 	{
-		bool IsProcTypePath { get; }
-		IDatum Datum { get; }
-		IProc Proc { get; }
+		IExpression Condition { get; }
+		IBlock Body { get; }
 	}
 }

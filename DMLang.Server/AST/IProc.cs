@@ -2,7 +2,7 @@
 
 namespace DMLang.Server.AST
 {
-	interface IProc : ITypePath
+	interface IProc : IPathable
 	{
 		string Name { get; }
 

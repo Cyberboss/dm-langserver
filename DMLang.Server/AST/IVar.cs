@@ -1,8 +1,8 @@
 ﻿namespace DMLang.Server.AST
 {
-	interface IVar : ITypePath, IUnsafeVar
+	interface IVar : IPathable, IUnsafeVar
 	{
-		bool Static { get; }
+		VarQualifier Qualifier { get; }
 
 		IExpression Initializer { get; }
 	}

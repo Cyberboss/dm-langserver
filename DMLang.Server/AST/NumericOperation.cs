@@ -20,5 +20,6 @@ namespace DMLang.Server.AST
 		BinaryOr,
 		Xor,
 		Modulo,
+		In
 	}
 }

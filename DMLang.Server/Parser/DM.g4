@@ -21,8 +21,10 @@ NULL: 'null';
 RETURN: 'return';
 STATIC: 'static';
 GLOBAL: 'global';
+CONST: 'const';
 OBJ: 'obj';
 MOB: 'mob';
+GOTO: 'goto';
 TURF: 'turf';
 AREA: 'area';
 IN: 'in';
@@ -74,7 +76,8 @@ string_text: BSLASH LBRACE string_text | embedded_expression string_text | BSLAS
 root_var_def: optional_slash var_def;
 var_def : VAR id_typepath_decl | VAR optional_slash LBRACE id_typepath_decl_block RBRACE ;
 id_typepath_decl_block : id_typepath_decl id_typepath_decl_block| id_typepath_decl;
-id_typepath_decl : id_typepath | static_or_global SLASH id_typepath | static_or_global optional_slash LBRACE id_typepath_block RBRACE;
+id_typepath_decl : id_typepath | static_or_global SLASH id_typepath | var_qualifier optional_slash LBRACE id_typepath_block RBRACE;
+var_qualifier: static_or_global | CONST;
 static_or_global : STATIC | GLOBAL;
 id_typepath_block:  id_typepath id_typepath_block | id_typepath;
 id_typepath: root_type SLASH custom_id_typepath | root_type optional_slash LBRACE custom_id_typepath_block RBRACE; 
@@ -100,9 +103,12 @@ argument_decl: VAR full_typepath | typepath | ID;
 
 block: LBRACE statements RBRACE | LBRACE RBRACE | statement;
 statements: statement statements | statement;
-statement: control_flow | var_def | assignment_statement | proccall_statement | return_statement | throw_statement;
+statement: control_flow | var_def | assignment_statement | proccall_statement | return_statement | throw_statement | label_statement | goto_statement;
 proccall_statement: proccall SEMI;
 assignment_statement: id_specifier assignment_op expression SEMI;
+
+label_statement: ID COLON;
+goto_statement: GOTO ID;
 
 throw_statement: THROW expression;
 return_statement: RETURN expression | RETURN;
@@ -142,7 +148,7 @@ associated_arguments: associated_argument | associated_argument COMMA associated
 list_declaration : LIST LPAREN associated_arguments RPAREN;
 
 id_specifier: DOT | inner_id_specifier;
-inner_id_specifier: ID datum_access inner_id_specifier | ID | WORLD | GLOBAL;
+inner_id_specifier: ID datum_access inner_id_specifier | root_type | ID | WORLD | GLOBAL;
 datum_access: DOT | COLON;
 
 expression : wrapped_expression | NOT wrapped_expression;

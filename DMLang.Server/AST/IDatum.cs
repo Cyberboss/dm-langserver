@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace DMLang.Server.AST
 {
-	interface IDatum
+	interface IDatum : IPathable
 	{
 		string Name { get; }
-		ITypePath Type { get; }
 
 		IReadOnlyList<ISourceLocation> Locations { get; }
 

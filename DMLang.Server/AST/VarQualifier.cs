@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DMLang.Server.AST
 {
-	interface ITypePath : IValue
+	enum VarQualifier
 	{
-		bool IsProcTypePath { get; }
-		IDatum Datum { get; }
-		IProc Proc { get; }
+		Unqualified,
+		Static,
+		Const
 	}
 }

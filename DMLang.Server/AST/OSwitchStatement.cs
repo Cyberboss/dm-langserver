@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DMLang.Server.AST
 {
-	interface ITypePath : IValue
+	interface ISwitch : IStatement
 	{
-		bool IsProcTypePath { get; }
-		IDatum Datum { get; }
-		IProc Proc { get; }
+		IExpression Condition { get; }
+		IBlock Default { get; }
+		IDictionary<IConstantValue, IBlock> Cases { get; }
 	}
 }

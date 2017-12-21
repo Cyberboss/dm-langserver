@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace DMLang.Server.AST
 {
-	interface ITypePath : IValue
+	interface IPathable
 	{
-		bool IsProcTypePath { get; }
-		IDatum Datum { get; }
-		IProc Proc { get; }
+		ITypePath TypePath();
 	}
 }
