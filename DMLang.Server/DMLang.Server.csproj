@@ -74,6 +74,7 @@
     <Compile Include="AST\IVar.cs" />
     <Compile Include="AST\ISwitch.cs" />
     <Compile Include="AST\RootType.cs" />
+    <Compile Include="AST\UnsafeVar.cs" />
     <Compile Include="AST\VarQualifier.cs" />
     <Compile Include="ExitCode.cs" />
     <Compile Include="ISourceLocation.cs" />
