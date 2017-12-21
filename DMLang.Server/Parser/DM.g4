@@ -107,12 +107,17 @@ argument_decl: VAR full_typepath | typepath | ID;
 
 block: LCURL statements RCURL | LCURL RCURL | statement;
 statements: statement statements | statement;
-statement: control_flow | var_def | assignment_statement | proccall_statement | return_statement | throw_statement | label_statement | goto_statement;
+statement: control_flow | var_def | assignment_statement | proccall_statement | return_statement | throw_statement | label_statement | goto_statement | inline_adjust;
 proccall_statement: proccall SEMI;
 assignment_statement: id_specifier assignment_op expression SEMI;
 
 label_statement: ID COLON;
 goto_statement: GOTO ID;
+
+inline_adjust: left_inline_adjust | right_inline_adjust;
+left_inline_adjust: expression inline_adjuster;
+right_inline_adjust: inline_adjuster expression;
+inline_adjuster: PLUS PLUS | MINUS MINUS;
 
 throw_statement: THROW expression;
 return_statement: RETURN expression | RETURN;
@@ -159,11 +164,11 @@ datum_access: DOT | COLON;
 
 expression : wrapped_expression | NOT wrapped_expression;
 wrapped_expression : inner_expression | LPAREN expression RPAREN;
-inner_expression: operation | value_range | ternery | list_access | non_recursive_inner_expression;
+inner_expression: operation | value_range | ternery | list_access | left_inline_adjust | non_recursive_inner_expression;
 
 non_recursive_expression: non_recursive_wrapped_expression | NOT non_recursive_wrapped_expression;
 non_recursive_wrapped_expression : non_recursive_inner_expression | LPAREN expression RPAREN;
-non_recursive_inner_expression: assignment | list_declaration | value | new_statement;
+non_recursive_inner_expression: assignment | list_declaration | value | new_statement | right_inline_adjust;
 
 list_access: non_recursive_expression LBRACE expression RBRACE;
 operation: non_recursive_expression lhrh_op expression | value lhrh_op expression;
