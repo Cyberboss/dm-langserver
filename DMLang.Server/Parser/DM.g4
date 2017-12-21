@@ -165,7 +165,7 @@ non_recursive_expression: non_recursive_wrapped_expression | NOT non_recursive_w
 non_recursive_wrapped_expression : non_recursive_inner_expression | LPAREN expression RPAREN;
 non_recursive_inner_expression: assignment | list_declaration | value | new_statement;
 
-list_access: non_recursive_expression LCURL expression RCURL;
+list_access: non_recursive_expression LBRACE expression RBRACE;
 operation: non_recursive_expression lhrh_op expression | value lhrh_op expression;
 value_range: non_recursive_expression TO expression STEP expression | non_recursive_expression TO expression;
 ternery: non_recursive_expression QUESTION expression COLON expression;
