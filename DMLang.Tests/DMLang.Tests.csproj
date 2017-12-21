@@ -89,6 +89,7 @@
   <ItemGroup>
     <None Include="Documents\DM\GlobalProcPrototype.dm" />
     <None Include="Documents\DM\TextOnlyString.dm" />
+    <None Include="Documents\DM\TGWorldNew.dm" />
     <None Include="Documents\Preprocessor\Basic.dm" />
     <None Include="Documents\Preprocessor\Basic2.dm" />
   </ItemGroup>

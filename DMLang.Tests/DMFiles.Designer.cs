@@ -79,5 +79,15 @@ namespace DMLang.Tests {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TGWorldNew {
+            get {
+                object obj = ResourceManager.GetObject("TGWorldNew", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

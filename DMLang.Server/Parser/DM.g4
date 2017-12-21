@@ -6,8 +6,6 @@ FDOT: '.....';
 DDOT: '..';
 DOT: '.';
 NUMBER: [0-9]+;
-TRUE: 'TRUE';
-FALSE: 'FALSE';
 DQUOTE: '"';
 SQUOTE: '\'';
 LBRACE: '[';
@@ -29,6 +27,7 @@ GOTO: 'goto';
 TURF: 'turf';
 AREA: 'area';
 IN: 'in';
+NEW: 'new';
 LPAREN: '(';
 RPAREN: ')';
 MINUS: '-';
@@ -45,6 +44,7 @@ THROW: 'throw';
 AND: '&';
 OR: '|';
 LTHAN: '<';
+VERB: 'verb';
 GTHAN: '>';
 LCURL: '{';
 RCURL: '}';
@@ -73,7 +73,7 @@ definition_type: root_var_def | datum_def | proc_def;
 
 optional_slash : SLASH | ;
 
-string_text: BSLASH LBRACE string_text | embedded_expression string_text | BSLASH DQUOTE string_text | ANYCHAR string_text | ANYCHAR;
+string_text: BSLASH LBRACE string_text | embedded_expression string_text | . string_text | ~BSLASH DQUOTE;
 
 root_var_def: optional_slash var_def;
 var_def : VAR id_typepath_decl | VAR optional_slash LCURL id_typepath_decl_block RCURL ;
@@ -96,6 +96,8 @@ datum_inner_def: proc_def | SLASH ID datum_inner_def | optional_slash LCURL datu
 datum_def_block: datum_def_contents | datum_def_contents datum_def_block;
 datum_def_contents: var_def | proc_def | custom_id_typepath_block;
 
+// TODO VERBS AND PROC OVERRIDES
+
 proc_def: PROC SLASH proc_id_def | PROC optional_slash LCURL proc_id_def_block RCURL;
 proc_id_def_block: proc_id_def proc_id_def_block | proc_id_def;
 proc_id_def: ID LPAREN RPAREN block | ID LPAREN arguments_def RPAREN block;
@@ -115,7 +117,9 @@ goto_statement: GOTO ID;
 throw_statement: THROW expression;
 return_statement: RETURN expression | RETURN;
 
-control_flow: if_statement | switch_statement | while_statement | for_statement | spawn_statement;
+control_flow: if_statement | switch_statement | while_statement | for_statement | spawn_statement | new_statement;
+
+new_statement: NEW full_typepath proc_arguments | NEW full_typepath | NEW proc_arguments | NEW ID | NEW;
 
 spawn_statement: spawn_invocation block;
 spawn_invocation: SPAWN LPAREN RPAREN | SPAWN LPAREN expression RPAREN;
@@ -159,7 +163,7 @@ inner_expression: operation | value_range | ternery | list_access | non_recursiv
 
 non_recursive_expression: non_recursive_wrapped_expression | NOT non_recursive_wrapped_expression;
 non_recursive_wrapped_expression : non_recursive_inner_expression | LPAREN expression RPAREN;
-non_recursive_inner_expression: assignment | list_declaration | value;
+non_recursive_inner_expression: assignment | list_declaration | value | new_statement;
 
 list_access: non_recursive_expression LCURL expression RCURL;
 operation: non_recursive_expression lhrh_op expression | value lhrh_op expression;
@@ -177,12 +181,12 @@ assignment_op: or_equals | and_equals | xor_equals | mult_equals | minus_equals 
 
 embedded_expression : LBRACE expression RBRACE;
 inner_string: string_text | string_text embedded_expression inner_string;
-inner_string_entry: DQUOTE inner_string DQUOTE | DQUOTE DQUOTE;
+inner_string_entry: DQUOTE inner_string | DQUOTE DQUOTE;
 string_entry: LCURL inner_string_entry RCURL | inner_string_entry ;
 
 file_ref: SQUOTE inner_file_ref;
-inner_file_ref: ANYCHAR SQUOTE | ANYCHAR inner_file_ref;
-number: NUMBER DOT NUMBER | NUMBER | TRUE | FALSE;
+inner_file_ref: ~BSLASH SQUOTE | . inner_file_ref;
+number: NUMBER DOT NUMBER | NUMBER;
 
 equals: EQUALS EQUALS;
 not_equals: NOT EQUALS;
