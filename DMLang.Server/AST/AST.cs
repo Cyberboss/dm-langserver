@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DMLang.Server.AST
 {
@@ -41,6 +42,9 @@ namespace DMLang.Server.AST
 		/// </summary>
 		readonly List<string> stringFormatters;
 
+		bool addedBuiltins;
+		bool addedStdDef;
+
 		/// <summary>
 		/// Construct an <see cref="AST"/>
 		/// </summary>
@@ -51,6 +55,24 @@ namespace DMLang.Server.AST
 			globalProcs = new Dictionary<string, IProc>();
 			resourcePaths = new List<string>();
 			stringFormatters = new List<string>();
+		}
+
+		public void AddByondBuiltins()
+		{
+			if (addedBuiltins)
+				throw new InvalidOperationException("Can only AddByondBuiltins once!");
+
+
+			addedBuiltins = true;
+		}
+
+		public void AddStdDef()
+		{
+			if (addedStdDef)
+				throw new InvalidOperationException("Can only AddByondBuiltins once!");
+
+
+			addedStdDef = true;
 		}
 	}
 }
