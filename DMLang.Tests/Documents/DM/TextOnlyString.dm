@@ -1,0 +1,1 @@
+﻿"~!@#$%^&*()_+QWERTYUIOP{}ASDFGHJKL:ZXCVBNM<>?`1234567890-=qwertyuiopasdfghjkl;'zxcvbnm,./"

@@ -22,14 +22,14 @@ namespace DMLang.Tests {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class TestFiles {
+    internal class PreprocessorFiles {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal TestFiles() {
+        internal PreprocessorFiles() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace DMLang.Tests {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DMLang.Tests.TestFiles", typeof(TestFiles).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DMLang.Tests.PreprocessorFiles", typeof(PreprocessorFiles).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace DMLang.Tests {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] PreprocessorBasic {
+        internal static byte[] Basic {
             get {
-                object obj = ResourceManager.GetObject("PreprocessorBasic", resourceCulture);
+                object obj = ResourceManager.GetObject("Basic", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace DMLang.Tests {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] PreprocessorBasic2 {
+        internal static byte[] Basic2 {
             get {
-                object obj = ResourceManager.GetObject("PreprocessorBasic2", resourceCulture);
+                object obj = ResourceManager.GetObject("Basic2", resourceCulture);
                 return ((byte[])(obj));
             }
         }

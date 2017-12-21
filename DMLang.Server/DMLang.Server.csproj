@@ -77,6 +77,7 @@
     <Compile Include="ExitCode.cs" />
     <Compile Include="ISourceLocation.cs" />
     <Compile Include="Parser\DMDocument.cs" />
+    <Compile Include="Parser\DMListener.cs" />
     <Compile Include="Parser\LanguageException.cs" />
     <Compile Include="Parser\PreprocessorException.cs" />
     <Compile Include="Program.cs" />

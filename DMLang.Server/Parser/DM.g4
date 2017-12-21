@@ -5,7 +5,6 @@ SDOT: '......';
 FDOT: '.....';
 DDOT: '..';
 DOT: '.';
-ID : [a-zA-Z_][a-zA-Z0-9_\-]* ;
 NUMBER: [0-9]+;
 TRUE: 'TRUE';
 FALSE: 'FALSE';
@@ -61,10 +60,11 @@ STEP: 'step';
 TO: 'to';
 CATCH: 'catch';
 QUESTION: '?';
-DQSTRING : ('\\\\' | '\\"' | ~[\r\n"])+ ;
-SQSTRING : ('\\\\' | '\\\'' | ~[\r\n\'])+ ;
+ID : [a-zA-Z_][a-zA-Z0-9_\-]+ ;
 
 WS : [ \t\r\n]+ -> skip ;
+
+ANYCHAR: .;
 
 language : definition | definition language ;
 definition : definition_type | definition_type;
@@ -73,18 +73,18 @@ definition_type: root_var_def | datum_def | proc_def;
 
 optional_slash : SLASH | ;
 
-string_text: BSLASH LBRACE string_text | embedded_expression string_text | BSLASH DQUOTE string_text | DQSTRING string_text | DQSTRING;
+string_text: BSLASH LBRACE string_text | embedded_expression string_text | BSLASH DQUOTE string_text | ANYCHAR string_text | ANYCHAR;
 
 root_var_def: optional_slash var_def;
-var_def : VAR id_typepath_decl | VAR optional_slash LBRACE id_typepath_decl_block RBRACE ;
+var_def : VAR id_typepath_decl | VAR optional_slash LCURL id_typepath_decl_block RCURL ;
 id_typepath_decl_block : id_typepath_decl id_typepath_decl_block| id_typepath_decl;
-id_typepath_decl : id_typepath | static_or_global SLASH id_typepath | var_qualifier optional_slash LBRACE id_typepath_block RBRACE;
+id_typepath_decl : id_typepath | static_or_global SLASH id_typepath | var_qualifier optional_slash LCURL id_typepath_block RCURL;
 var_qualifier: static_or_global | CONST;
 static_or_global : STATIC | GLOBAL;
 id_typepath_block:  id_typepath id_typepath_block | id_typepath;
-id_typepath: root_type SLASH custom_id_typepath | root_type optional_slash LBRACE custom_id_typepath_block RBRACE; 
+id_typepath: root_type_no_list SLASH custom_id_typepath | root_type_no_list optional_slash LCURL custom_id_typepath_block RCURL; 
 custom_id_typepath_block: custom_id_typepath custom_id_typepath_block | custom_id_typepath;
-custom_id_typepath: id_and_assignment SEMI | ID SLASH custom_id_typepath | ID optional_slash LBRACE custom_id_typepath_block RBRACE;
+custom_id_typepath: id_and_assignment SEMI | ID SLASH custom_id_typepath | ID optional_slash LCURL custom_id_typepath_block RCURL;
 id_and_assignment: assignment | id_specifier;
 
 full_typepath: SLASH typepath;
@@ -92,18 +92,18 @@ typepath: root_type SLASH id_typepath_oneline;
 id_typepath_oneline: ID SLASH id_typepath_oneline | ID;
 
 datum_def : optional_slash root_type datum_inner_def;
-datum_inner_def: proc_def | SLASH ID datum_inner_def | optional_slash LBRACE datum_def_block RBRACE;
+datum_inner_def: proc_def | SLASH ID datum_inner_def | optional_slash LCURL datum_def_block RCURL;
 datum_def_block: datum_def_contents | datum_def_contents datum_def_block;
 datum_def_contents: var_def | proc_def | custom_id_typepath_block;
 
-proc_def: PROC SLASH proc_id_def | PROC optional_slash LBRACE proc_id_def_block RBRACE;
+proc_def: PROC SLASH proc_id_def | PROC optional_slash LCURL proc_id_def_block RCURL;
 proc_id_def_block: proc_id_def proc_id_def_block | proc_id_def;
 proc_id_def: ID LPAREN RPAREN block | ID LPAREN arguments_def RPAREN block;
 arguments_def: argument_def COMMA arguments_def | argument_def;
 argument_def: argument_decl EQUALS expression | argument_decl;
 argument_decl: VAR full_typepath | typepath | ID;
 
-block: LBRACE statements RBRACE | LBRACE RBRACE | statement;
+block: LCURL statements RCURL | LCURL RCURL | statement;
 statements: statement statements | statement;
 statement: control_flow | var_def | assignment_statement | proccall_statement | return_statement | throw_statement | label_statement | goto_statement;
 proccall_statement: proccall SEMI;
@@ -161,7 +161,7 @@ non_recursive_expression: non_recursive_wrapped_expression | NOT non_recursive_w
 non_recursive_wrapped_expression : non_recursive_inner_expression | LPAREN expression RPAREN;
 non_recursive_inner_expression: assignment | list_declaration | value;
 
-list_access: non_recursive_expression LBRACE expression RBRACE;
+list_access: non_recursive_expression LCURL expression RCURL;
 operation: non_recursive_expression lhrh_op expression | value lhrh_op expression;
 value_range: non_recursive_expression TO expression STEP expression | non_recursive_expression TO expression;
 ternery: non_recursive_expression QUESTION expression COLON expression;
@@ -178,9 +178,10 @@ assignment_op: or_equals | and_equals | xor_equals | mult_equals | minus_equals 
 embedded_expression : LBRACE expression RBRACE;
 inner_string: string_text | string_text embedded_expression inner_string;
 inner_string_entry: DQUOTE inner_string DQUOTE | DQUOTE DQUOTE;
-string_entry: LBRACE inner_string_entry RBRACE | inner_string_entry ;
+string_entry: LCURL inner_string_entry RCURL | inner_string_entry ;
 
-file_ref: SQUOTE SQSTRING SQUOTE;
+file_ref: SQUOTE inner_file_ref;
+inner_file_ref: ANYCHAR SQUOTE | ANYCHAR inner_file_ref;
 number: NUMBER DOT NUMBER | NUMBER | TRUE | FALSE;
 
 equals: EQUALS EQUALS;
@@ -197,4 +198,5 @@ minus_equals: MINUS EQUALS;
 plus_equals: PLUS EQUALS;
 slash_equals: SLASH EQUALS;
 
-root_type: DATUM | ATOM | OBJ | MOB | TURF | AREA | WORLD;
+root_type: root_type_no_list | LIST;
+root_type_no_list: DATUM | ATOM | OBJ | MOB | TURF | AREA | WORLD;
