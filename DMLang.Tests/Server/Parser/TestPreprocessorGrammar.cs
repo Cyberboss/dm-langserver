@@ -9,15 +9,14 @@ namespace DMLang.Server.Parser.Tests
 		[TestMethod]
 		public void TestLexer()
 		{
-			var cts = Helpers.GetCommonTokenStream(TestFiles.Basic, (i) => new PreprocessorLexer(i));
+			var cts = Helpers.GetCommonTokenStream(TestFiles.PreprocessorBasic, (i) => new PreprocessorLexer(i));
 			cts.Fill();
 		}
 
 		[TestMethod]
 		public void TestListener()
 		{
-			var cts = Helpers.GetCommonTokenStream(TestFiles.Basic, (i) => new PreprocessorLexer(i));
-
+			var cts = Helpers.GetCommonTokenStream(TestFiles.PreprocessorBasic, (i) => new PreprocessorLexer(i));
 		}
     }
 }

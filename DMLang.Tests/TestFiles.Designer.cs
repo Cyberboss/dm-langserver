@@ -63,9 +63,9 @@ namespace DMLang.Tests {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Basic {
+        internal static byte[] PreprocessorBasic {
             get {
-                object obj = ResourceManager.GetObject("Basic", resourceCulture);
+                object obj = ResourceManager.GetObject("PreprocessorBasic", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace DMLang.Tests {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Basic2 {
+        internal static byte[] PreprocessorBasic2 {
             get {
-                object obj = ResourceManager.GetObject("Basic2", resourceCulture);
+                object obj = ResourceManager.GetObject("PreprocessorBasic2", resourceCulture);
                 return ((byte[])(obj));
             }
         }

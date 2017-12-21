@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Basic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PreprocessorBasic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Documents\Preprocessor\Basic.dm;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Basic2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PreprocessorBasic2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Documents\Preprocessor\Basic2.dm;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
