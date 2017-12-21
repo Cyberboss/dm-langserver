@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['xor_5fequalscontext',['Xor_equalsContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_xor__equals_context.html',1,'Dangl::Calculator::Generated::DMParser']]]
+  ['value_5frangecontext',['Value_rangeContext',['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_parser_1_1_value__range_context.html',1,'DMLang::Server::Parser::DMParser']]],
+  ['valuecontext',['ValueContext',['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_parser_1_1_value_context.html',1,'DMLang::Server::Parser::DMParser']]],
+  ['var_5fdefcontext',['Var_defContext',['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_parser_1_1_var__def_context.html',1,'DMLang::Server::Parser::DMParser']]],
+  ['var_5fqualifiercontext',['Var_qualifierContext',['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_parser_1_1_var__qualifier_context.html',1,'DMLang::Server::Parser::DMParser']]]
 ];

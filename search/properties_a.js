@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['name',['Name',['../interface_d_m_lang_1_1_server_1_1_a_s_t_1_1_i_argument.html#a0b6c328e9dab187ccbf06bd8ba9f8ace',1,'DMLang.Server.AST.IArgument.Name()'],['../interface_d_m_lang_1_1_server_1_1_a_s_t_1_1_i_datum.html#ae379214140b0cae5c5f5eeae6bb7b2f8',1,'DMLang.Server.AST.IDatum.Name()'],['../interface_d_m_lang_1_1_server_1_1_a_s_t_1_1_i_label.html#ae7d7c2e70ca08bef72809259bb59612f',1,'DMLang.Server.AST.ILabel.Name()'],['../interface_d_m_lang_1_1_server_1_1_a_s_t_1_1_i_proc.html#a4b4dddc42c567df0bc95ace920edb7a3',1,'DMLang.Server.AST.IProc.Name()'],['../interface_d_m_lang_1_1_server_1_1_a_s_t_1_1_i_proc_call.html#ac62d7704758e438bab97b7f752fcb8f3',1,'DMLang.Server.AST.IProcCall.Name()'],['../interface_d_m_lang_1_1_server_1_1_a_s_t_1_1_i_unsafe_var.html#aae021ff5c4063e53bec3fc48a1b4edde',1,'DMLang.Server.AST.IUnsafeVar.Name()']]],
+  ['number',['Number',['../interface_d_m_lang_1_1_server_1_1_a_s_t_1_1_i_number.html#a750b0012ff835c9c730b23ed2f912a30',1,'DMLang::Server::AST::INumber']]]
+];

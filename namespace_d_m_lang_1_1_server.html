@@ -88,7 +88,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">DMLang.Server Namespace Reference</div>  </div>
 </div><!--header-->
@@ -96,6 +97,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
+<tr class="memitem:namespace_d_m_lang_1_1_server_1_1_a_s_t"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_d_m_lang_1_1_server_1_1_a_s_t.html">AST</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_d_m_lang_1_1_server_1_1_parser"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_d_m_lang_1_1_server_1_1_parser.html">Parser</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespace_d_m_lang_1_1_server_1_1_tests"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_d_m_lang_1_1_server_1_1_tests.html">Tests</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -107,12 +112,69 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_m_lang_1_1_server_1_1_i_server_factory.html">IServerFactory</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory for creating an <a class="el" href="interface_d_m_lang_1_1_server_1_1_i_server.html" title="DM Langserver ">IServer</a>  <a href="interface_d_m_lang_1_1_server_1_1_i_server_factory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_d_m_lang_1_1_server_1_1_i_source_location.html">ISourceLocation</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_m_lang_1_1_server_1_1_program.html">Program</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_m_lang_1_1_server_1_1_server.html">Server</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class used to implement <a class="el" href="class_service_connection.html">ServiceConnection</a>  <a href="class_d_m_lang_1_1_server_1_1_server.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_m_lang_1_1_server_1_1_server_factory.html">ServerFactory</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a2d65f5e85d5281f98409b4ee5c6c827b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827b">ExitCode</a> : int { <br />
+&#160;&#160;<a class="el" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba8462b58246e70e5c83e5b939a9332cb5">ExitCode.InternalError</a> = -1, 
+<a class="el" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba505a83f220c02df2f85c3810cd9ceb38">ExitCode.Success</a> = 0, 
+<a class="el" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba8bc5f79e008e71e37e1c2fb6ec216326">ExitCode.NoShutdown</a> = 1, 
+<a class="el" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba088dcae95e0356a6cb5f42ae8b56351d">ExitCode.NoExit</a> = 2, 
+<br />
+&#160;&#160;<a class="el" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba4489786e96b26ae2655a9e7e6f153922">ExitCode.BadStop</a> = 3
+<br />
+ }</td></tr>
+<tr class="separator:a2d65f5e85d5281f98409b4ee5c6c827b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a2d65f5e85d5281f98409b4ee5c6c827b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827b">DMLang.Server.ExitCode</a> : int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a2d65f5e85d5281f98409b4ee5c6c827ba8462b58246e70e5c83e5b939a9332cb5"></a>InternalError&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a2d65f5e85d5281f98409b4ee5c6c827ba505a83f220c02df2f85c3810cd9ceb38"></a>Success&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a2d65f5e85d5281f98409b4ee5c6c827ba8bc5f79e008e71e37e1c2fb6ec216326"></a>NoShutdown&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a2d65f5e85d5281f98409b4ee5c6c827ba088dcae95e0356a6cb5f42ae8b56351d"></a>NoExit&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a2d65f5e85d5281f98409b4ee5c6c827ba4489786e96b26ae2655a9e7e6f153922"></a>BadStop&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="_exit_code_8cs_source.html#l00003">3</a> of file <a class="el" href="_exit_code_8cs_source.html">ExitCode.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                  : <span class="keywordtype">int</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    {</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        <a class="code" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba8462b58246e70e5c83e5b939a9332cb5">InternalError</a> = -1,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <a class="code" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba505a83f220c02df2f85c3810cd9ceb38">Success</a> = 0,</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <a class="code" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba8bc5f79e008e71e37e1c2fb6ec216326">NoShutdown</a> = 1,</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <a class="code" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba088dcae95e0356a6cb5f42ae8b56351d">NoExit</a> = 2,</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba4489786e96b26ae2655a9e7e6f153922">BadStop</a> = 3</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    }</div><div class="ttc" id="namespace_d_m_lang_1_1_server_html_a2d65f5e85d5281f98409b4ee5c6c827ba8462b58246e70e5c83e5b939a9332cb5"><div class="ttname"><a href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba8462b58246e70e5c83e5b939a9332cb5">DMLang.Server.ExitCode.InternalError</a></div></div>
+<div class="ttc" id="namespace_d_m_lang_1_1_server_html_a2d65f5e85d5281f98409b4ee5c6c827ba4489786e96b26ae2655a9e7e6f153922"><div class="ttname"><a href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba4489786e96b26ae2655a9e7e6f153922">DMLang.Server.ExitCode.BadStop</a></div></div>
+<div class="ttc" id="namespace_d_m_lang_1_1_server_html_a2d65f5e85d5281f98409b4ee5c6c827ba505a83f220c02df2f85c3810cd9ceb38"><div class="ttname"><a href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba505a83f220c02df2f85c3810cd9ceb38">DMLang.Server.ExitCode.Success</a></div></div>
+<div class="ttc" id="namespace_d_m_lang_1_1_server_html_a2d65f5e85d5281f98409b4ee5c6c827ba8bc5f79e008e71e37e1c2fb6ec216326"><div class="ttname"><a href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba8bc5f79e008e71e37e1c2fb6ec216326">DMLang.Server.ExitCode.NoShutdown</a></div></div>
+<div class="ttc" id="namespace_d_m_lang_1_1_server_html_a2d65f5e85d5281f98409b4ee5c6c827ba088dcae95e0356a6cb5f42ae8b56351d"><div class="ttname"><a href="namespace_d_m_lang_1_1_server.html#a2d65f5e85d5281f98409b4ee5c6c827ba088dcae95e0356a6cb5f42ae8b56351d">DMLang.Server.ExitCode.NoExit</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

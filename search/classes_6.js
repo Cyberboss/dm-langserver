@@ -1,20 +1,4 @@
 var searchData=
 [
-  ['id_5fand_5fassignmentcontext',['Id_and_assignmentContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_id__and__assignment_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['id_5fspecifiercontext',['Id_specifierContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_id__specifier_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['id_5ftypepath_5fblockcontext',['Id_typepath_blockContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_id__typepath__block_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['id_5ftypepath_5fdecl_5fblockcontext',['Id_typepath_decl_blockContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_id__typepath__decl__block_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['id_5ftypepath_5fdeclcontext',['Id_typepath_declContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_id__typepath__decl_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['id_5ftypepath_5fonelinecontext',['Id_typepath_onelineContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_id__typepath__oneline_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['id_5ftypepathcontext',['Id_typepathContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_id__typepath_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['idmvisitor',['IDMVisitor',['../interface_dangl_1_1_calculator_1_1_generated_1_1_i_d_m_visitor.html',1,'Dangl::Calculator::Generated']]],
-  ['if_5fcheckcontext',['If_checkContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_if__check_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['if_5fcontinuationcontext',['If_continuationContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_if__continuation_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['if_5fstatementcontext',['If_statementContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_if__statement_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['inner_5fexpressioncontext',['Inner_expressionContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_inner__expression_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['inner_5fstring_5fentrycontext',['Inner_string_entryContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_inner__string__entry_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['inner_5fstringcontext',['Inner_stringContext',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser_1_1_inner__string_context.html',1,'Dangl::Calculator::Generated::DMParser']]],
-  ['iparsetreevisitor',['IParseTreeVisitor',['../class_i_parse_tree_visitor.html',1,'']]],
-  ['iserver',['IServer',['../interface_d_m_lang_1_1_server_1_1_i_server.html',1,'DMLang::Server']]],
-  ['iserverfactory',['IServerFactory',['../interface_d_m_lang_1_1_server_1_1_i_server_factory.html',1,'DMLang::Server']]]
+  ['goto_5fstatementcontext',['Goto_statementContext',['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_parser_1_1_goto__statement_context.html',1,'DMLang::Server::Parser::DMParser']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dfa',['DFA',['../namespace_dangl_1_1_calculator_1_1_generated.html#a8dd47316dc84d24206ab4850db2c546a',1,'Dangl::Calculator::Generated']]]
+  ['dfa',['DFA',['../namespace_d_m_lang_1_1_server_1_1_parser.html#a8ea6fd17e57fe791a629b8fdb4b37276',1,'DMLang::Server::Parser']]]
 ];

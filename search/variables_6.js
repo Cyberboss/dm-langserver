@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['false',['FALSE',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_lexer.html#ae4f3f1d50275d1e93773940044c20a0a',1,'Dangl.Calculator.Generated.DMLexer.FALSE()'],['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser.html#a5b1fd4d48ea6563f89606b19164f6200',1,'Dangl.Calculator.Generated.DMParser.FALSE()']]],
-  ['for',['FOR',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_lexer.html#a3fe3cc0bde68a60bcd00a51441a066ee',1,'Dangl.Calculator.Generated.DMLexer.FOR()'],['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser.html#a85eb2efbc7f0db8e5c857a153d76646b',1,'Dangl.Calculator.Generated.DMParser.FOR()']]]
+  ['factory',['factory',['../class_d_m_lang_1_1_server_1_1_program.html#ac02117829c0603f3d7a59e6a1dbded64',1,'DMLang::Server::Program']]],
+  ['false',['FALSE',['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_lexer.html#a7df16a390b17b1ca12c2431f7502e4d2',1,'DMLang.Server.Parser.DMLexer.FALSE()'],['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_parser.html#a172d820ca3795cce6dc9a7d57e967481',1,'DMLang.Server.Parser.DMParser.FALSE()']]],
+  ['fdot',['FDOT',['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_lexer.html#ac30871c697935e2df9863e856003b94c',1,'DMLang.Server.Parser.DMLexer.FDOT()'],['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_parser.html#a95c023d6d41b6d589716f5dd177d1407',1,'DMLang.Server.Parser.DMParser.FDOT()']]],
+  ['for',['FOR',['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_lexer.html#acd4a3494caf79b9f3f90551c80422489',1,'DMLang.Server.Parser.DMLexer.FOR()'],['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_parser.html#aebff74177a92c1aea31ec59d8fd9b1bc',1,'DMLang.Server.Parser.DMParser.FOR()']]]
 ];

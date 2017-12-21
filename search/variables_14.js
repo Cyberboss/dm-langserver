@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xor',['XOR',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_lexer.html#af0e1100efb13361e4f97b213abf299d2',1,'Dangl.Calculator.Generated.DMLexer.XOR()'],['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser.html#a237e794aabda2706e9988d874225b91b',1,'Dangl.Calculator.Generated.DMParser.XOR()']]]
+  ['var',['VAR',['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_lexer.html#aa3eb4e7039ccef12d08774c779a72884',1,'DMLang.Server.Parser.DMLexer.VAR()'],['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_parser.html#a2e2dd3a0eb71657655dcc1d6c949554d',1,'DMLang.Server.Parser.DMParser.VAR()']]]
 ];

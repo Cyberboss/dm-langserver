@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['plus',['PLUS',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_lexer.html#ace162daf05403fbda90b0356588ccd8f',1,'Dangl.Calculator.Generated.DMLexer.PLUS()'],['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser.html#a7cf0c3fcbe2dd719f148927121c0fd70',1,'Dangl.Calculator.Generated.DMParser.PLUS()']]],
-  ['proc',['PROC',['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_lexer.html#a3f3706143fb707951eeda220bc0b03f8',1,'Dangl.Calculator.Generated.DMLexer.PROC()'],['../class_dangl_1_1_calculator_1_1_generated_1_1_d_m_parser.html#a7a8ccb6f0ffa41a4057404996aafa30b',1,'Dangl.Calculator.Generated.DMParser.PROC()']]]
+  ['obj',['OBJ',['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_lexer.html#a43ce99a58a841bdb816ca04c9b113dd0',1,'DMLang.Server.Parser.DMLexer.OBJ()'],['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_parser.html#a929bc64e7062b75ba1b590a81a6d4316',1,'DMLang.Server.Parser.DMParser.OBJ()']]],
+  ['or',['OR',['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_lexer.html#a097e03c1dc4f5911d4beba6ad83f63cd',1,'DMLang.Server.Parser.DMLexer.OR()'],['../class_d_m_lang_1_1_server_1_1_parser_1_1_d_m_parser.html#a88aa772f41540c37235511d733ee2925',1,'DMLang.Server.Parser.DMParser.OR()'],['../class_d_m_lang_1_1_server_1_1_parser_1_1_preprocessor_lexer.html#a19297d5c93cff782789ec1c472837258',1,'DMLang.Server.Parser.PreprocessorLexer.OR()'],['../class_d_m_lang_1_1_server_1_1_parser_1_1_preprocessor_parser.html#af91cdd636b5d0425fac722878ecd0352',1,'DMLang.Server.Parser.PreprocessorParser.OR()']]]
 ];
