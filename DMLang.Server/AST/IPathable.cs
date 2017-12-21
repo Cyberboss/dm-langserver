@@ -8,6 +8,6 @@ namespace DMLang.Server.AST
 {
 	interface IPathable
 	{
-		ITypePath TypePath();
+		ITypePath TypePath { get; }
 	}
 }

@@ -51,6 +51,7 @@
     <Compile Include="Helpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server\AST\TestUnsafeVar.cs" />
+    <Compile Include="Server\AST\TestVar.cs" />
     <Compile Include="Server\Parser\TestDMLexer.cs" />
     <Compile Include="Server\TestConnection.cs" />
     <Compile Include="PreprocessorFiles.Designer.cs">
