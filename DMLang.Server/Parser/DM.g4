@@ -1,5 +1,164 @@
-﻿//This for a preproccessed DM grammar. Also all blocks are surrounded with {}
+﻿//This for a preproccessed DM grammar
 grammar DM;
+
+tokens { INDENT, DEDENT }
+
+@lexer::members {
+	// A queue where extra tokens are pushed on (see the NEWLINE lexer rule).
+	System.Collections.Generic.LinkedList<IToken> tokens = new System.Collections.Generic.LinkedList<IToken>();
+	// The stack that keeps track of the indentation level.
+	System.Collections.Generic.Stack<int> indents = new System.Collections.Generic.Stack<int>();
+	// The amount of opened braces, brackets and parenthesis.
+	int opened;
+	// The most recently produced token.
+	IToken lastToken;
+	public override void Emit(IToken t)
+	{
+		Token = t;
+		tokens.AddLast(t);
+	}
+
+	IToken TokensElementAt(int n)
+	{
+		var current = tokens.First;
+		for (var I = 0; I < n; ++I)
+			current = current.Next;
+		return current.Value;
+	}
+
+	public override IToken NextToken()
+	{
+		// Check if the end-of-file is ahead and there are still some DEDENTS expected.
+		if (_input.La(1) == Eof && indents.Count > 0)
+		{
+			// Remove any trailing EOF tokens from our buffer.
+			for (int i = tokens.Count - 1; i >= 0; i--)
+			{
+				var tok = TokensElementAt(i);
+
+				if (tok.Type == Eof)
+				{
+					tokens.Remove(tok);
+				}
+			}
+
+			// First emit an extra line break that serves as the end of the statement.
+			Emit(commonToken(DMParser.NEWLINE, "\n"));
+
+			// Now emit as much DEDENT tokens as needed.
+			while (indents.Count > 0)
+			{
+				Emit(createDedent());
+				indents.Pop();
+			}
+
+			// Put the EOF back on the token stream.
+			Emit(commonToken(DMParser.Eof, "<EOF>"));
+		}
+
+		var next = NextToken();
+
+		if (next.Channel == TokenConstants.DefaultChannel)
+		{
+			// Keep track of the last token on the default channel.
+			this.lastToken = next;
+		}
+
+		var res = tokens.Count == 0 ? next : tokens.First.Value;
+		if (tokens.Count > 0)
+			tokens.RemoveFirst();
+		return res;
+	}
+
+	IToken createDedent()
+	{
+		CommonToken dedent = commonToken(DMParser.DEDENT, "");
+		dedent.Line = lastToken.Line;
+		return dedent;
+	}
+
+	CommonToken commonToken(int type, string text)
+	{
+		int stop = CharIndex - 1;
+		int start = text == string.Empty ? stop : stop - text.Length + 1;
+		return new CommonToken(this._tokenFactorySourcePair, type, DefaultTokenChannel, start, stop);
+	}
+
+	// Calculates the indentation of the provided spaces, taking the
+	// following rules into account:
+	//
+	// "Tabs are replaced (from left to right) by one to eight spaces
+	//  such that the total number of characters up to and including
+	//  the replacement is a multiple of eight [...]"
+	//
+	//  -- https://docs.python.org/3.1/reference/lexical_analysis.html#indentation
+	static int getIndentationCount(string spaces)
+	{
+		int count = 0;
+		foreach (var ch in spaces.ToCharArray())
+		{
+			switch (ch)
+			{
+				case '\t':
+					count += 8 - (count % 8);
+					break;
+				default:
+					// A normal space char.
+					count++;
+					break;
+			}
+		}
+
+		return count;
+	}
+
+	bool atStartOfInput()
+	{
+		return Column == 0 && Line == 1;
+	}
+}
+
+NEWLINE
+ : ( {atStartOfInput()}?   SPACES
+   | ( '\r'? '\n' | '\r' | '\f' ) SPACES?
+   )
+{
+	string newLine = new System.Text.RegularExpressions.Regex("[^\r\n\f]+").Replace(Text, "");
+	string spaces = new System.Text.RegularExpressions.Regex("[\r\n\f]+").Replace(Text, "");
+	int next = _input.La(1);
+	if (opened > 0 || next == '\r' || next == '\n' || next == '\f' || next == '#')
+	{
+		// If we're inside a list or on a blank line, ignore all indents, 
+		// dedents and line breaks.
+		Skip();
+	}
+	else
+	{
+		Emit(commonToken(NEWLINE, newLine));
+		int indent = getIndentationCount(spaces);
+		int previous = indents.Count == 0 ? 0 : indents.Peek();
+		if (indent == previous)
+		{
+			// skip indents of the same size as the present indent-size
+			Skip();
+		}
+		else if (indent > previous)
+		{
+			indents.Push(indent);
+			Emit(commonToken(DMParser.INDENT, spaces));
+		}
+		else
+		{
+			// Possibly emit more than 1 DEDENT token.
+			while (indents.Count > 0 && indents.Peek() > indent)
+			{
+				Emit(createDedent());
+				indents.Pop();
+			}
+		}
+	}
+}
+;
 
 SDOT: '......';
 FDOT: '.....';
@@ -62,7 +221,19 @@ CATCH: 'catch';
 QUESTION: '?';
 ID : [a-zA-Z_][a-zA-Z0-9_\-]+ ;
 
-WS : [ \t\r\n]+ -> skip ;
+ESCAPED_NEWLINE: '\\' [ \t\r]+ '\n' -> skip;
+
+fragment SPACES
+ : [ \t]+
+;
+
+fragment LINE_JOINING
+ : '\\' SPACES? ( '\r'? '\n' | '\r' | '\f')
+;
+
+SKIP_
+ : ( SPACES | LINE_JOINING ) -> skip
+;
 
 ANYCHAR: .;
 
@@ -84,8 +255,10 @@ static_or_global : STATIC | GLOBAL;
 id_typepath_block:  id_typepath id_typepath_block | id_typepath;
 id_typepath: root_type_no_list SLASH custom_id_typepath | root_type_no_list optional_slash LCURL custom_id_typepath_block RCURL; 
 custom_id_typepath_block: custom_id_typepath custom_id_typepath_block | custom_id_typepath;
-custom_id_typepath: id_and_assignment SEMI | ID SLASH custom_id_typepath | ID optional_slash LCURL custom_id_typepath_block RCURL;
+custom_id_typepath: id_and_assignment end_of_line | ID SLASH custom_id_typepath | ID optional_slash LCURL custom_id_typepath_block RCURL;
 id_and_assignment: assignment | id_specifier;
+
+end_of_line: NEWLINE | SEMI;
 
 full_typepath: SLASH typepath;
 typepath: root_type SLASH id_typepath_oneline;
@@ -107,9 +280,10 @@ argument_decl: VAR full_typepath | typepath | ID;
 
 block: LCURL statements RCURL | LCURL RCURL | statement;
 statements: statement statements | statement;
-statement: control_flow | var_def | assignment_statement | proccall_statement | return_statement | throw_statement | label_statement | goto_statement | inline_adjust;
-proccall_statement: proccall SEMI;
-assignment_statement: id_specifier assignment_op expression SEMI;
+statement: statement_content end_of_line;
+statement_content: control_flow | var_def | assignment_statement | proccall_statement | return_statement | throw_statement | label_statement | goto_statement | inline_adjust;
+proccall_statement: proccall;
+assignment_statement: id_specifier assignment_op expression;
 
 label_statement: ID COLON;
 goto_statement: GOTO ID;
