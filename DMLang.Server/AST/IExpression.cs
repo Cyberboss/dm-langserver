@@ -8,7 +8,6 @@ namespace DMLang.Server.AST
 {
 	interface IExpression : IStatement
 	{
-		bool LogicalNot { get; }
 		string ToString();
 	}
 }

@@ -42,8 +42,11 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AST\Argument.cs" />
+    <Compile Include="AST\Assignment.cs" />
     <Compile Include="AST\AssignmentOperation.cs" />
     <Compile Include="AST\AST.cs" />
+    <Compile Include="AST\Block.cs" />
     <Compile Include="AST\IAdjustOperation.cs" />
     <Compile Include="AST\IFor.cs" />
     <Compile Include="AST\IGoto.cs" />
