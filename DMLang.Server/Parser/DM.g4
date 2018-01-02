@@ -176,6 +176,7 @@ DATUM: 'datum';
 ATOM: 'atom';
 PROC: 'proc';
 NULL: 'null';
+AS: 'as';
 RETURN: 'return';
 STATIC: 'static';
 GLOBAL: 'global';
@@ -194,6 +195,8 @@ PLUS: '+';
 STAR: '*';
 EQUALS: '=';
 TAB: '\t';
+NUM: 'num';
+TEXT: 'text';
 VAR: 'var';
 SWITCH: 'switch';
 IF: 'if';
@@ -209,6 +212,7 @@ LCURL: '{';
 RCURL: '}';
 SEMI: ';';
 LIST: 'list';
+ANYTHING: 'anything';
 COMMA: ',';
 COLON: ':';
 XOR: '^';
@@ -265,18 +269,23 @@ typepath: root_type SLASH id_typepath_oneline;
 id_typepath_oneline: ID SLASH id_typepath_oneline | ID;
 
 datum_def : optional_slash root_type datum_inner_def;
-datum_inner_def: proc_def | SLASH ID datum_inner_def | optional_slash LCURL datum_def_block RCURL;
+datum_inner_def: verb_def | proc_def | SLASH ID datum_inner_def | optional_slash LCURL datum_def_block RCURL;
 datum_def_block: datum_def_contents | datum_def_contents datum_def_block;
 datum_def_contents: var_def | proc_def | custom_id_typepath_block;
 
-// TODO VERBS AND PROC OVERRIDES
+// TODO PROC OVERRIDES
 
 proc_def: PROC SLASH proc_id_def | PROC optional_slash LCURL proc_id_def_block RCURL;
+verb_def: VERB SLASH proc_id_def | VERB optional_slash LCURL proc_id_def_block RCURL;
 proc_id_def_block: proc_id_def proc_id_def_block | proc_id_def;
 proc_id_def: ID LPAREN RPAREN block | ID LPAREN arguments_def RPAREN block;
 arguments_def: argument_def COMMA arguments_def | argument_def;
-argument_def: argument_decl EQUALS expression | argument_decl;
+argument_def: argument_decl EQUALS expression | argument_decl | argument_decl EQUALS expression as_statement | argument_decl as_statement;
 argument_decl: VAR full_typepath | typepath | ID;
+
+as_statement: AS NULL OR anything_statement | AS anything_statement | AS as_type;
+as_type: NULL | TEXT | NUM;
+anything_statement: ANYTHING IN expression;
 
 block: LCURL statements RCURL | LCURL RCURL | statement;
 statements: statement statements | statement;
