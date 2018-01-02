@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DMLang.Server.AST
 {
@@ -13,11 +9,11 @@ namespace DMLang.Server.AST
 		IReadOnlyList<ISourceLocation> Locations { get; }
 
 		IReadOnlyList<IDatum> Children { get; }
-		IReadOnlyDictionary<string, IVar> Vars { get; }
+		IReadOnlyList<IVar> Vars { get; }
 
 		/// <summary>
 		/// Refers to the parentmost procs by name
 		/// </summary>
-		IReadOnlyDictionary<string, IProc> Procs { get; }
+		IReadOnlyList<IProc> Procs { get; }
 	}
 }

@@ -6,6 +6,6 @@
 		IDatum Datum { get; }
 		IProc Proc { get; }
 
-		PathType Resolve();
+		PathType Resolve(IAST ast);
 	}
 }

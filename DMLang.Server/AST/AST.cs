@@ -8,13 +8,13 @@ namespace DMLang.Server.AST
 	sealed class AST : IAST
 	{
 		/// <inheritdoc />
-		public IReadOnlyDictionary<string, IVar> GlobalVars => globalVars;
+		public IReadOnlyList<IVar> GlobalVars => globalVars;
 
 		/// <inheritdoc />
 		public IReadOnlyList<IDatum> RootDatums => rootDatums;
 
 		/// <inheritdoc />
-		public IReadOnlyDictionary<string, IProc> GlobalProcs => globalProcs;
+		public IReadOnlyList<IProc> GlobalProcs => globalProcs;
 
 		/// <inheritdoc />
 		public IReadOnlyList<string> ResourcePaths => resourcePaths;
@@ -25,7 +25,7 @@ namespace DMLang.Server.AST
 		/// <summary>
 		/// Backing field for <see cref="GlobalVars"/>
 		/// </summary>
-		readonly Dictionary<string, IVar> globalVars;
+		readonly List<IVar> globalVars;
 		/// <summary>
 		/// Backing field for <see cref="RootDatums"/>
 		/// </summary>
@@ -33,7 +33,7 @@ namespace DMLang.Server.AST
 		/// <summary>
 		/// Backing field for <see cref="GlobalProcs"/>
 		/// </summary>
-		readonly Dictionary<string, IProc> globalProcs;
+		readonly List<IProc> globalProcs;
 		/// <summary>
 		/// Backing field for <see cref="ResourcePaths"/>
 		/// </summary>
@@ -51,9 +51,9 @@ namespace DMLang.Server.AST
 		/// </summary>
 		public AST()
 		{
-			globalVars = new Dictionary<string, IVar>();
+			globalVars = new List<IVar>();
 			rootDatums = new List<IDatum>();
-			globalProcs = new Dictionary<string, IProc>();
+			globalProcs = new List<IProc>();
 			resourcePaths = new List<string>();
 			stringFormatters = new List<string>();
 		}
@@ -61,7 +61,7 @@ namespace DMLang.Server.AST
 		public void AddByondBuiltins()
 		{
 			if (addedBuiltins)
-				throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture, "Can only {0} once!", nameof(AddByondBuiltins)));
+				throw new InvalidOperationException(System.String.Format(CultureInfo.InvariantCulture, "Can only {0} once!", nameof(AddByondBuiltins)));
 
 
 			addedBuiltins = true;
@@ -70,7 +70,7 @@ namespace DMLang.Server.AST
 		public void AddStdDef()
 		{
 			if (addedStdDef)
-				throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture, "Can only {0} once!", nameof(AddStdDef)));
+				throw new InvalidOperationException(System.String.Format(CultureInfo.InvariantCulture, "Can only {0} once!", nameof(AddStdDef)));
 
 
 			addedStdDef = true;

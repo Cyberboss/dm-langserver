@@ -8,7 +8,6 @@ namespace DMLang.Server.AST
 {
 	interface IString : IValue
 	{
-		string Flatten { get; }
 		string Formatter { get; }
 
 		IReadOnlyList<IExpression> Expressions { get; }

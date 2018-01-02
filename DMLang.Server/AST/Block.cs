@@ -6,6 +6,11 @@ namespace DMLang.Server.AST
 	/// <inheritdoc />
 	sealed class Block : IBlock
 	{
+		/// <summary>
+		/// An empty <see cref="Block"/>
+		/// </summary>
+		public static readonly Block Empty = new Block(new List<Statement>());
+
 		/// <inheritdoc />
 		public IReadOnlyList<IStatement> Statements => statements;
 

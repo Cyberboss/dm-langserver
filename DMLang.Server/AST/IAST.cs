@@ -7,9 +7,9 @@ namespace DMLang.Server.AST
 	/// </summary>
 	interface IAST
 	{
-		IReadOnlyDictionary<string, IVar> GlobalVars { get; }
+		IReadOnlyList<IVar> GlobalVars { get; }
 		IReadOnlyList<IDatum> RootDatums { get; }
-		IReadOnlyDictionary<string, IProc> GlobalProcs { get; }
+		IReadOnlyList<IProc> GlobalProcs { get; }
 
 		IReadOnlyList<string> ResourcePaths { get; }
 		IReadOnlyList<string> StringFormatters { get; }

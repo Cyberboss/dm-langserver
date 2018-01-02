@@ -47,6 +47,8 @@
     <Compile Include="AST\AssignmentOperation.cs" />
     <Compile Include="AST\AST.cs" />
     <Compile Include="AST\Block.cs" />
+    <Compile Include="AST\Branch.cs" />
+    <Compile Include="AST\ConstantString.cs" />
     <Compile Include="AST\IAdjustOperation.cs" />
     <Compile Include="AST\IFor.cs" />
     <Compile Include="AST\IGoto.cs" />
@@ -66,6 +68,7 @@
     <Compile Include="AST\IExpression.cs" />
     <Compile Include="AST\INumber.cs" />
     <Compile Include="AST\IPathable.cs" />
+    <Compile Include="AST\Label.cs" />
     <Compile Include="AST\NumericOperation.cs" />
     <Compile Include="AST\IOperationExpression.cs" />
     <Compile Include="AST\IProc.cs" />
@@ -80,6 +83,9 @@
     <Compile Include="AST\ISwitch.cs" />
     <Compile Include="AST\PathType.cs" />
     <Compile Include="AST\RootType.cs" />
+    <Compile Include="AST\Statement.cs" />
+    <Compile Include="AST\String.cs" />
+    <Compile Include="AST\TypeSpecifier.cs" />
     <Compile Include="AST\UnsafeVar.cs" />
     <Compile Include="AST\Var.cs" />
     <Compile Include="AST\VarQualifier.cs" />

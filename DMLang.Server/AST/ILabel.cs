@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DMLang.Server.AST
+﻿namespace DMLang.Server.AST
 {
+	/// <summary>
+	/// Represents a label for a <see cref="IGoto"/>
+	/// </summary>
 	interface ILabel : IStatement
 	{
+		/// <summary>
+		/// The name of the label
+		/// </summary>
 		string Name { get; }
 	}
 }
