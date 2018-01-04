@@ -6,7 +6,7 @@
 	interface IUnsafeVar
 	{
 		/// <summary>
-		/// The name of the var
+		/// The name of the <see cref="IUnsafeVar"/>
 		/// </summary>
 		string Name { get; }
 

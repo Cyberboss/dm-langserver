@@ -1,9 +1,11 @@
-﻿namespace DMLang.Server.AST
+﻿using System;
+
+namespace DMLang.Server.AST
 {
 	/// <summary>
 	/// Represents an unchanging <see cref="IValue"/>
 	/// </summary>
-	interface IConstantValue : IValue
+	interface IConstantValue : IValue, IEquatable<IConstantValue>
 	{
 	}
 }

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DMLang.Server.AST
+﻿namespace DMLang.Server.AST
 {
+    /// <summary>
+    /// Represents a DM expression
+    /// </summary>
 	interface IExpression : IStatement
 	{
-		string ToString();
 	}
 }

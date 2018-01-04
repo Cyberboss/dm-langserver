@@ -1,6 +1,9 @@
 ﻿namespace DMLang.Server.AST
 {
-	interface ITypePath : IValue, IPathable
+    /// <summary>
+    /// Represents a typepath <see cref="IConstantValue"/>
+    /// </summary>
+	interface ITypePath : IConstantValue, IPathable
 	{
 	}
 }

@@ -8,6 +8,9 @@ namespace DMLang.Server.AST
 	/// </summary>
 	interface IRange : IConstantValue
 	{
+        /// <summary>
+        /// IDK I GUESS ITS A LIST OF CONTANT VALUES OR SOME SHIT ITS FUCKING RETARDED
+        /// </summary>
 		IReadOnlyList<IConstantValue> Items { get; }
 	}
 }

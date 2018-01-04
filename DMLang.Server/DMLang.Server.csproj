@@ -53,6 +53,7 @@
     <Compile Include="AST\IFor.cs" />
     <Compile Include="AST\IGoto.cs" />
     <Compile Include="AST\ILabel.cs" />
+    <Compile Include="AST\IProcOverride.cs" />
     <Compile Include="AST\IRange.cs" />
     <Compile Include="AST\ITypePath.cs" />
     <Compile Include="AST\IWhile.cs" />
@@ -82,7 +83,6 @@
     <Compile Include="AST\IVar.cs" />
     <Compile Include="AST\ISwitch.cs" />
     <Compile Include="AST\PathType.cs" />
-    <Compile Include="AST\RootType.cs" />
     <Compile Include="AST\Statement.cs" />
     <Compile Include="AST\String.cs" />
     <Compile Include="AST\TypeSpecifier.cs" />
