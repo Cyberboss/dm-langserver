@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DMLang.Server.AST
+﻿namespace DMLang.Server.AST
 {
+	/// <summary>
+	/// A var not guaranteed to exist at runtime
+	/// </summary>
 	interface IUnsafeVar
 	{
+		/// <summary>
+		/// The name of the <see cref="IUnsafeVar"/>
+		/// </summary>
 		string Name { get; }
 
 		/// <summary>

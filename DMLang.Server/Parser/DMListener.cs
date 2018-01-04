@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DMLang.Server.AST
+namespace DMLang.Server.Parser
 {
-	enum RootType
+	sealed class DMListener : DMBaseListener
 	{
-		Value,
-		List,
-		Datum,
 	}
 }

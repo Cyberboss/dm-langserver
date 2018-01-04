@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DMLang.Server.AST
 {
-	interface IConstantValue : IValue
+	/// <summary>
+	/// Represents an unchanging <see cref="IValue"/>
+	/// </summary>
+	interface IConstantValue : IValue, IEquatable<IConstantValue>
 	{
 	}
 }

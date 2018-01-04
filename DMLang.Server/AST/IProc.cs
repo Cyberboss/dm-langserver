@@ -2,15 +2,14 @@
 
 namespace DMLang.Server.AST
 {
-	interface IProc : IPathable
+    /// <summary>
+    /// Represents a proc
+    /// </summary>
+	interface IProc : IProcOverride, IPathable
 	{
+        /// <summary>
+        /// The top level name of the <see cref="IProc"/>
+        /// </summary>
 		string Name { get; }
-
-		IReadOnlyList<IVar> Arguments { get; }
-	
-		IDatum Owner { get; }
-		IProc Override { get; }
-
-		IBlock Contents { get; }
 	}
 }

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DMLang.Server.AST
+﻿namespace DMLang.Server.AST
 {
+    /// <summary>
+    /// Represents something that uses a <see cref="ITypeSpecifier"/>
+    /// </summary>
 	interface IPathable
 	{
-		ITypePath TypePath();
+        /// <summary>
+        /// The <see cref="ITypeSpecifier"/> of the <see cref="IPathable"/>
+        /// </summary>
+		ITypeSpecifier TypeSpecifier { get; }
 	}
 }

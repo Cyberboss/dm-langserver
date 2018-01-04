@@ -7,14 +7,21 @@ namespace DMLang.Server.AST
 	/// </summary>
 	interface IAST
 	{
-		/// <summary>
-		/// Global vars
-		/// </summary>
-		IReadOnlyDictionary<string, IVar> Vars { get; }
+		IReadOnlyList<IVar> GlobalVars { get; }
 		IReadOnlyList<IDatum> RootDatums { get; }
-		IReadOnlyDictionary<string, IProc> Procs { get; }
+		IReadOnlyList<IProc> GlobalProcs { get; }
 
 		IReadOnlyList<string> ResourcePaths { get; }
 		IReadOnlyList<string> StringFormatters { get; }
+
+		/// <summary>
+		/// Adds the builtin BYOND <see cref="IVar"/>s, <see cref="IDatum"/>s, <see cref="IProc"/>s, and string formatters
+		/// </summary>
+		void AddByondBuiltins();
+
+		/// <summary>
+		/// Adds the <see cref="IVar"/>s, <see cref="IDatum"/>s, <see cref="IProc"/>s, and string formatters from stddef.dm
+		/// </summary>
+		void AddStdDef();
 	}
 }

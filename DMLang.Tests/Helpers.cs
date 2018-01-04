@@ -1,6 +1,6 @@
 ﻿using Antlr4.Runtime;
 using System;
-using System.Text;
+using System.IO;
 
 namespace DMLang.Tests
 {
@@ -8,7 +8,8 @@ namespace DMLang.Tests
 	{
 		static string ResToString(byte[] resource)
 		{
-			return Encoding.Default.GetString(resource);
+			using (var memoryStream = new MemoryStream(resource))
+				return new StreamReader(memoryStream).ReadToEnd();
 		}
 
 		public static CommonTokenStream GetCommonTokenStream(byte[] resource, Func<AntlrInputStream, Lexer> lexerFactory)

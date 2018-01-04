@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DMLang.Server.AST
+﻿namespace DMLang.Server.AST
 {
-	interface ITypePath : IValue
+    /// <summary>
+    /// Represents a typepath <see cref="IConstantValue"/>
+    /// </summary>
+	interface ITypePath : IConstantValue, IPathable
 	{
-		bool IsProcTypePath { get; }
-		IDatum Datum { get; }
-		IProc Proc { get; }
 	}
 }

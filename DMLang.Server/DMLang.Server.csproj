@@ -42,11 +42,20 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AST\Argument.cs" />
+    <Compile Include="AST\Assignment.cs" />
     <Compile Include="AST\AssignmentOperation.cs" />
+    <Compile Include="AST\AST.cs" />
+    <Compile Include="AST\Block.cs" />
+    <Compile Include="AST\Branch.cs" />
+    <Compile Include="AST\ConstantString.cs" />
+    <Compile Include="AST\IAdjustOperation.cs" />
     <Compile Include="AST\IFor.cs" />
     <Compile Include="AST\IGoto.cs" />
     <Compile Include="AST\ILabel.cs" />
+    <Compile Include="AST\IProcOverride.cs" />
     <Compile Include="AST\IRange.cs" />
+    <Compile Include="AST\ITypePath.cs" />
     <Compile Include="AST\IWhile.cs" />
     <Compile Include="AST\IArgument.cs" />
     <Compile Include="AST\IAssignment.cs" />
@@ -60,6 +69,7 @@
     <Compile Include="AST\IExpression.cs" />
     <Compile Include="AST\INumber.cs" />
     <Compile Include="AST\IPathable.cs" />
+    <Compile Include="AST\Label.cs" />
     <Compile Include="AST\NumericOperation.cs" />
     <Compile Include="AST\IOperationExpression.cs" />
     <Compile Include="AST\IProc.cs" />
@@ -67,16 +77,22 @@
     <Compile Include="AST\IReturnStatement.cs" />
     <Compile Include="AST\IStatement.cs" />
     <Compile Include="AST\IString.cs" />
-    <Compile Include="AST\ITypePath.cs" />
+    <Compile Include="AST\ITypeSpecifier.cs" />
     <Compile Include="AST\IUnsafeVar.cs" />
     <Compile Include="AST\IValue.cs" />
     <Compile Include="AST\IVar.cs" />
     <Compile Include="AST\ISwitch.cs" />
-    <Compile Include="AST\RootType.cs" />
+    <Compile Include="AST\PathType.cs" />
+    <Compile Include="AST\Statement.cs" />
+    <Compile Include="AST\String.cs" />
+    <Compile Include="AST\TypeSpecifier.cs" />
+    <Compile Include="AST\UnsafeVar.cs" />
+    <Compile Include="AST\Var.cs" />
     <Compile Include="AST\VarQualifier.cs" />
     <Compile Include="ExitCode.cs" />
     <Compile Include="ISourceLocation.cs" />
     <Compile Include="Parser\DMDocument.cs" />
+    <Compile Include="Parser\DMListener.cs" />
     <Compile Include="Parser\LanguageException.cs" />
     <Compile Include="Parser\PreprocessorException.cs" />
     <Compile Include="Program.cs" />
